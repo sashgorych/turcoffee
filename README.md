@@ -328,3 +328,14 @@
 
 Посилання ``` <a href="" class="custom-link">Вхід</a> <a href="" class="custom-link">Реєстрація</a> ``` можна залишати, вони ховаються css-ом
 
+
+---
+# Корзина
+
+айтем товару ```<div class='cart_item'> ``` аналогічно до інших сторінок різновиди товарів (кольори, вага, знижка...)
+До  ```<div class='cart_item'> ``` додається клас:
+1) pr__origin має вийти ```<div class="cart_item pr__origin">```
+2) pr__colors має вийти ```<div class="cart_item pr__colors">```
+3) pr__weight має вийти ```<div class="cart_item pr__weight">```
+4) discount - Показує маркер що товар зі знижкою.  відображає акційну ціну
+5) pr_new - показує маркер *новинка*
