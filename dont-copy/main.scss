@@ -130,6 +130,163 @@ section {
 }
 
 //common block start
+//forms start
+label.checkbox{
+  cursor: pointer;
+  font-size: 19px;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  span{
+    font-size: 19px;
+  }
+  a{
+    color: black;
+  }
+}
+.contacts__form{
+  margin-top: 40px;
+  button{
+    margin:0 auto 50px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 30px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    &.error{
+      input{
+        border-color: $red;
+      }
+      .cback-inp-error-text{
+        display: block;
+      }
+    }
+  }
+  .label {
+    margin-bottom: 10px;
+    color: #424343;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 22px;
+  }
+  textarea{
+    width: 100%;
+    outline: none;
+    font-size: 17px;
+    font-family: custom-regular;
+    padding:5px 15px;
+    box-sizing: border-box;
+    height: 100%;
+    background-color: white;
+    border: 1px solid $gray;
+  }
+  input{
+    padding:5px 15px;
+    width: 100%;
+    font-size: 17px;
+    height: 41px;
+    background-color: white;
+    border: 1px solid $gray;
+    box-sizing: border-box;
+  }
+  .cback-inp-error-text {
+    color: red;
+    font-size: 11px;
+    margin-bottom: -13px;
+    display: none;
+  }
+  .form__in{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    .f__right{
+      width: 56%;
+      .form-row{
+        height: 100%;
+      }
+    }
+    .f__left{
+      width: calc(41% - 20px);
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  .form_part{
+    width: calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
+  }
+  .form_col{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 1280px){
+  .contacts__form .label{
+    font-size: 16px;
+    margin-bottom: 3px;
+    line-height: 19px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .register_form .form__in{
+    flex-direction: column;
+  }
+  .register_form .form_part{
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  .register_form .form_col{
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 576px) {
+  .contacts__form .label{
+    font-size: 17px;
+  }
+  .contacts__form .form__in .f__left{
+    width: 100%;
+  }
+  .contacts__form .form__in .f__right{
+    margin-top: 30px;
+    width: 100%;
+  }
+  .contacts__form .form__in{
+    flex-direction: column;
+  }
+  .contacts__form textarea{
+    min-height: 200px;
+
+  }
+}
+//forms end
+
+.annotation{
+  p{
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 576px){
+  .annotation{
+    p{
+      font-size: 13px;
+    }
+  }
+}
 //poopup start
 .popup_title{
   font-size: 25px;
@@ -326,7 +483,15 @@ a{
     }
   }
 }
-
+@media screen and (max-width: 576px){
+  .page__navigation a{
+    width: 34px;
+    height: 34px;
+  }
+  .page__navigation span{
+    height: 34px;
+  }
+}
 //navigation end
 
 .main__page__show__more{
@@ -1197,11 +1362,11 @@ body {
       left: -25px;
       position: absolute;
       content: "";
-      top: 3px;
-      background: url(../images/bulet.svg) no-repeat;
+      top: 8px;
+      background: url(../images/icons/zerno_bullet.svg) no-repeat;
       background-size: contain;
-      height: 14px;
-      width: 14px;
+      height: 11px;
+      width: 11px;
       display: block;
     }
   }
@@ -1263,6 +1428,9 @@ body {
 }
 }
 @media screen and (max-width: 576px) {
+  .text_content ul li:before{
+    top: 5px;
+  }
   .annotation{
     span{
       top: -20px;
@@ -1281,6 +1449,11 @@ body {
     .img2{
       padding: 10px;
     }
+  }
+}
+@media screen and (max-width: 480px) {
+  .text_content {
+    font-size: 16px;
   }
 }
 //text block end
@@ -6150,78 +6323,8 @@ flex-direction: row;
     }
   }
 }
-.contacts__form{
-  margin-top: 40px;
-  button{
-    margin:0 auto 50px;
-  }
-  .form-row {
-    flex-direction: column;
-    display: flex;
-    width: 100%;
-    text-align: left;
-    margin-bottom: 30px;
-    &:last-child{
-      margin-bottom: 0;
-    }
-    &.error{
-      input{
-        border-color: $red;
-      }
-      .cback-inp-error-text{
-        display: block;
-      }
-    }
-  }
-  .label {
-    margin-bottom: 10px;
-    color: #424343;
-    font-size: 21px;
-    font-weight: 400;
-    line-height: 22px;
-  }
-  textarea{
-    width: 100%;
-    outline: none;
-    font-size: 17px;
-font-family: custom-regular;
-    padding:5px 15px;
-    box-sizing: border-box;
-    height: 100%;
-    background-color: white;
-    border: 1px solid $gray;
-  }
-  input{
-    padding:5px 15px;
-    width: 100%;
-    font-size: 17px;
-    height: 41px;
-    background-color: white;
-    border: 1px solid $gray;
-    box-sizing: border-box;
-  }
-  .cback-inp-error-text {
-    color: red;
-    font-size: 11px;
-    display: none;
-  }
-  .form__in{
-    margin-bottom: 50px;
-    display: flex;
-    justify-content: space-between;
-    .f__right{
-      width: 56%;
-      .form-row{
-        height: 100%;
-      }
-    }
-    .f__left{
-      width: calc(41% - 20px);
-      display: flex;
-      flex-direction: column;
-    }
-  }
-}
+
+
 @media screen and (max-width: 576px) {
   .contacts-content{
     margin:30px auto 0;
@@ -6234,26 +6337,11 @@ font-family: custom-regular;
       display: block;
     }
   }
-  .contacts__form .label{
-    font-size: 17px;
-  }
-  .contacts__form .form__in .f__left{
-    width: 100%;
-  }
-  .contacts__form .form__in .f__right{
-    margin-top: 30px;
-    width: 100%;
-  }
-  .contacts__form .form__in{
-    flex-direction: column;
-  }
+
   .contacts__top__text a, .contacts__top__text span{
     font-size: 17px;
   }
-  .contacts__form textarea{
-    min-height: 200px;
 
-  }
   .contacts__top__text .contact__item{
     flex-direction: column;
     .clients{
@@ -6595,7 +6683,7 @@ font-size: 10px;
   .cart_itm_kinds{
     text-align: center;
     .weights{
-      width: 95px;
+      width: 80px;
     }
     .colors{
       width: 50%;
@@ -6707,7 +6795,33 @@ font-size: 10px;
     .color-name{
       display: none;
     }
-
+  span.color-name{
+    position: relative;
+    border-radius: 50%;
+    font-size: 10px;
+    line-height: 16px;
+    width: 14px;
+    height: 14px;
+    margin: auto;
+    border-radius: 50%;
+    &:after{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      border: 1px solid $gray;
+      border-radius: 50%;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      content: "";
+    }
+  }
   }
   .weights{
     width: 80px;
@@ -6980,6 +7094,14 @@ font-size: 10px;
 }
 .cart_stocks_container{
   margin-bottom: 65px;
+  max-height: 655px;
+  transition: .3s;
+  &.hidden{
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: .3s;
+  }
 }
 .cart_top_btns{
   margin-bottom: 55px;
@@ -7121,6 +7243,9 @@ font-size: 10px;
   }
 }
 @media screen and (max-width: 720px){
+  .cart_itm_kinds .colors span.color-name{
+    margin: 5px 0 0 0 ;
+  }
   .shop_stock_in{
     flex-direction: column;
     align-items: center;
@@ -7347,8 +7472,31 @@ font-size: 10px;
 .order_c{
   width: 15.5%;
   text-align: center;
-  p{
-    font-size: 15px;
+  span.product_color{
+    position: relative;
+    border-radius: 50%;
+    font-size: 10px;
+    line-height: 16px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    &:after{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      border: 1px solid $gray;
+      border-radius: 50%;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      content: "";
+    }
   }
 }
 .order_w{
@@ -7387,7 +7535,7 @@ font-size: 10px;
     }
   }
   .order_c{
-    p{
+    span.product_color{
       display: none;
     }
   }
@@ -7403,7 +7551,7 @@ font-size: 10px;
   }
   &.pr__colors{
     .order_c{
-      p{
+      span.product_color{
         display: block;
       }
       .empty{
@@ -7541,3 +7689,210 @@ font-size: 10px;
     font-size: 19px;
   }
 }
+
+
+//register page start
+.register_section{
+  label.checkbox{
+    a:hover, a:focus{
+      text-decoration: underline;
+    }
+    width: 215px;
+    margin: 0 auto 35px;
+  }
+  .container-block{
+    display: flex;
+    .register_right{
+      width: 70%;
+    }
+    .register_left{
+      img{
+        margin-bottom: 30px;
+      }
+      margin-right: 20px;
+      width: 30%;
+      min-width: 200px;
+    }
+  }
+}
+.success_register_block{
+  max-width: 360px;
+  display: none;
+  margin: 90px auto;
+  text-align: center;
+  img{
+    width: 30px;
+    margin-bottom: 30px;
+  }
+}
+.register_section.step2{
+  .register_right{
+    .default_register_block{
+      display: none;
+    }
+    .success_register_block{
+      display: block;
+    }
+  }
+}
+@media screen and (max-width: 576px){
+  .register_section{
+    .title-line-block .title-line-block-text {
+      margin-bottom: -4px;
+
+    }
+    .title-line-block .title-line-block-line {
+      display: flex;
+    }
+  }
+  .register_form {
+    margin-top: 20px;
+  }
+  .register_form .form_part{
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  .register_form .form__in {
+    margin-bottom: 20px;
+  }
+  .register_section label.checkbox{
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 900px){
+  .register_section .container-block .register_left{
+    display: none;
+  }
+  .register_section .container-block .register_right{
+    width: 100%;
+  }
+
+}
+
+//register page end
+
+
+//blog start
+.blog-page{
+  margin-bottom: 70px;
+  .title-line-block .title-line-block-line{
+    display: flex;
+  }
+  .title-line-block .title-line-block-text{
+    margin-bottom: -5px;
+  }
+}
+.blog-content{
+  font-size: 19px;
+  overflow: unset;
+  max-width: 950px;
+  margin:60px auto 0;
+  .blog_item{
+    margin-bottom: 40px;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid $gray;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  .custom-button__white{
+    margin: 30px auto 0;
+    max-width: 240px;
+  }
+  .blog_i_title{
+    margin-bottom: 30px;
+    color: $red;
+    text-transform: uppercase;
+    font-family: custom-bold;
+    font-size: 1.429em;
+  }
+  .blog_i_content{
+    display: flex;
+  }
+  .blog_i_date{
+    background: white;
+    position: absolute;
+    padding: 5px 0 5px 5px;
+    top: -20px;
+    right: -1px;
+    position: absolute;
+    span{
+      font-size: 0.65em;
+      text-transform: uppercase;
+    }
+  }
+.blog_i_img{
+  width:60%;
+  margin-left: 25px;
+}
+  .blog_i_text{
+    text-align: justify;
+    max-height: 295px;
+    overflow: hidden;
+  }
+  .blog_i_left{
+    width: 40%;
+  }
+}
+@media screen and (max-width: 992px){
+  .blog-content .blog_i_text{
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 890px){
+}
+
+@media screen and (max-width: 720px){
+  .blog-content .custom-button__white {
+    margin: 30px auto 0;
+    max-width: 240px;
+    font-size: 17px;
+    padding: 8px 12px;
+    display: inline-block;
+  }
+  .blog-content .blog_i_content{
+    flex-direction: column-reverse;
+  }
+  .blog-content .blog_i_left{
+    text-align: center;
+  }
+  .blog-content .blog_item{
+    padding: 15px;
+  }
+  .blog-content .blog_i_left{
+    width: 100%;
+  }
+  .blog-content .blog_i_img{
+    margin: 0 0 15px 0;
+    width: 100%;
+  }
+  .blog-content .blog_i_text p:last-child{
+    margin-bottom: 0;
+  }
+  .blog-content .blog_i_title{
+    font-size: 1.1em;
+    margin-bottom: 15px;
+  }
+}
+@media screen and (max-width: 576px){
+  .blog-page {
+    margin-bottom: 55px;
+  }
+  .blog-content{
+    font-size: 17px;
+  }
+}
+@media screen and (max-width: 480px){
+  .blog-content{
+    font-size: 16px;
+  }
+  .blog-content .blog_i_text {
+    max-height: 280px;
+  }
+}
+//blog end

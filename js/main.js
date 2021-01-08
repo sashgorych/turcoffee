@@ -814,12 +814,18 @@ function hideProductAltMenu() {
     $('.alt-product-menu').removeClass('active')
 }
 
-//cart page
-$('.draw_up_order').click(function (e) {
+//cart page start
+$('.repeat_order_btn').click(function (e) {
     e.preventDefault();
     showOrderPopup()
 })
-
+$('.pickup_stocks_btn').click(function (e) {
+    e.preventDefault();
+    toggleStockProduct()
+})
+function toggleStockProduct() {
+    $('.cart_stocks_container ').toggleClass('hidden')
+}
 function showOrderPopup(){
     $('.order_popup').addClass('active')
     showDarkMenuBg()
@@ -837,4 +843,5 @@ $('.popup_close').click(function () {
 $('.title-line-block-text-text').click(function () {
     $('.cart').toggleClass('new')
 })
+//cart page end
 //# sourceMappingURL=main.js.map
