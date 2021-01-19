@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title></title>
+    <link rel="icon" href="./images/fav.png">
+    <link rel="stylesheet" href="./css/slick-lightbox.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/tippy.js@6/themes/light.css"
+    />
+    <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
+</head>
+<body class="">
+<div class="layout layout-menu-opened-overflow">
+    <section class="header">
+        <div class="header-top-line">
+            <div class="container-block">
+                <div class="language">
+                    <div class="current-language">
+                        <img src="./images/icons/mang.svg" alt="lang">
+                        <div class="selected-language">
+                            <span>Україна</span>
+                        </div>
+                    </div>
+                    <div class="language-list">
+                        <div class="triangle-left"></div>
+
+                        <a href="">English</a>
+                        <a href="">Русский</a>
+                    </div>
+
+                </div>
+                <div class="auth authorized">
+                    <img src="./images/icons/entry.svg" alt="entry">
+                    <div class="auth-block">
+                        <a href="">Вхід</a>
+                        <a href="">Реєстрація</a>
+                    </div>
+                    <div class="authorized__block">
+                        <div class="user__status__block" data-percent="50">
+                            <div class="user__progress_bar_block">
+                                <div class="user__progress_bar">
+                                </div>
+                                <span>Клієнт</span>
+                                <div class="user__progress__popup">
+                                    <div class="icon-close"><span></span></div>
+
+                                    <div class="triangle-left">
+                                    </div>
+                                    <div class="user__progress__popup_content">
+                                        <span>Наберіть 6000 грн. щоб перейти на рівень "партнер"</span>
+                                        <p>Залишилося 3000грн. (50%)</p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="user__data">
+                            <div class="user__name"><span>Іван Іванович</span></div>
+                            <div class="user__photo"><div class="user__photo_in"><img src="./images/default-images/user_avatars.svg" alt=""></div></div>
+                        </div>
+                        <div class="auth__menu">
+                            <div class="icon-close"><span></span></div>
+
+                            <div class="triangle-left">
+                            </div>
+                            <ul>
+                                <li><a href="">Мій профіль</a></li>
+                                <li><a href="">Додати користувача</a></li>
+                                <li><a href="">Мої партнери</a></li>
+                                <li><a href="">Облік ТО і нарахувань</a></li>
+                                <li><a href="">Особистий кабінет</a></li>
+                                <li><a href="">Історія замовлень</a></li>
+                                <li><a href="">Вихід</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom-line">
+            <div class="container-block">
+
+                <div class="menu">
+                    <div class="menu-toggle-btn">
+                        <div class="menu-mob"><span></span></div>
+                        <p>Меню</p>
+                    </div>
+                </div>
+                <div class="quick-navigation">
+                    <div class="logo">
+                        <a href=""><img src="./images/logo.svg" alt="turcoffee"></a>
+                    </div>
+                    <div class="quick-navigation-list">
+                        <ul>
+                            <li><a href="">КАВОВАРКИ</a></li>
+                            <li><a href="">ТЕХНІКА ARZUM</a></li>
+                            <li>
+                                <a href="">КАВА</a>
+                                <div class="submenu">
+                                    <div class="triangle-left"></div>
+                                    <ul>
+                                        <li><a href="">Зернова</a></li>
+                                        <li><a href="">Мелена</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="">ПОСУД</a></li>
+                            <li><a href="">КАКАО ТА ВЕРШКИ</a></li>
+                            <li><a href="">СОЛОДОЩІ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tools">
+                    <a href="" class="bucket">
+                        <div class="bucket-img">
+                            <div class="bucket-amount">
+                                <span>99</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="" class="fav">
+                        <span class="fav-img"></span>
+                    </a>
+                    <div class="search">
+                        <div class="search-in">
+                            <a href="" class="search-btn">
+                            </a>
+                            <input type="text" placeholder="Пошук" id="search-pc-str">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-main">
+            <div class="menu-main-container">
+                <div class="search-mobile-form">
+                    <div class="search-mobile-form-in">
+                        <div class="search-mobile-form-close">
+                            <div class="icon-close"><span></span></div>
+                        </div>
+                        <div class="search-mobile-form-input">
+                            <input type="text" placeholder="Напишіть те, що хочете знайти" id="search-mobile">
+                            <a href="" class="search-mobile-form-input-clear">
+                                <div class="icon-close"><span></span></div>
+                            </a>
+                            <button class="product__show__more custom-button__white">Шукати</button>
+                            <a href="" class="search-mobile-form-input-btn">
+                                <img src="./images/icons/zoom.svg" alt="zoom">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-main-container-in">
+                    <div class="menu-main-top">
+                        <div class="mobile-tools">
+                            <div class="language">
+                                <div class="current-language">
+                                    <img src="./images/icons/mang.svg" alt="lang">
+                                    <div class="selected-language">
+                                        <span>Україна</span>
+                                    </div>
+                                </div>
+                                <div class="language-list">
+                                    <div class="triangle-left"></div>
+
+                                    <a href="">English</a>
+                                    <a href="">Русский</a>
+                                </div>
+
+                            </div>
+                            <div class="mobile-search">
+                                <img src="./images/icons/zoom.svg" alt="zoom">
+                                <p>Пошук</p>
+
+                            </div>
+                        </div>
+                        <img src="./images/footer/logo_footer.svg" class="menu-logo" alt="Turcoffee logo">
+                        <div class="menu-mob act"><span></span></div>
+                        <div class="menu-main-top-auth authorized">
+                            <a href="" class="custom-link">Вхід</a>
+                            <a href="" class="custom-link">Реєстрація</a>
+                            <div class="authorized__block">
+                                <div class="user__status__block" data-percent="50">
+                                    <div class="user__progress_bar_block">
+                                        <div class="user__progress_bar">
+                                        </div>
+                                        <span>Клієнт</span>
+                                        <div class="user__progress__popup">
+                                            <div class="icon-close"><span></span></div>
+                                            <div class="triangle-left">
+                                            </div>
+                                            <div class="user__progress__popup_content">
+                                                <span>Наберіть 6000 грн. щоб перейти на рівень "партнер"</span>
+                                                <p>Залишилося 3000грн. (50%)</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="user__data">
+                                    <div class="user__name"><span>Іван Іванович</span></div>
+                                    <div class="user__photo"><div class="user__photo_in"><img src="./images/default-images/user_avatars.svg" alt=""></div></div>
+                                </div>
+                                <div class="auth__menu">
+                                    <div class="icon-close"><span></span></div>
+
+                                    <div class="triangle-left">
+                                    </div>
+                                    <ul>
+                                        <li><a href="">Мій профіль</a></li>
+                                        <li><a href="">Додати користувача</a></li>
+                                        <li><a href="">Мої партнери</a></li>
+                                        <li><a href="">Облік ТО і нарахувань</a></li>
+                                        <li><a href="">Особистий кабінет</a></li>
+                                        <li><a href="">Історія замовлень</a></li>
+                                        <li><a href="">Вихід</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-main-content">
+                        <ul>
+                            <li class="unit-toggle has-toggle">
+                                <div class="unit-toggle-span">
+                                    <span class="unit-title">Каталог</span>
+                                    <span class="unit-toggle__icon "></span>
+                                </div>
+                                <div class="submenu-list">
+                                    <a href="">Кавоварки</a>
+                                    <a href="">Техніка Arzum</a>
+                                    <a href="">Зернова кава</a>
+                                    <a href="">Мелена кава</a>
+                                    <a href="">Какао та шоколад</a>
+                                    <a href="">Інша продукція</a>
+                                    <a href="">Східні солодощі</a>
+                                    <a href="">Посуд</a>
+                                    <a href="">Витратні матеріали</a>
+                                    <a href="">Сувенірна продукція</a>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="">Новинки</a>
+                            </li>
+                            <li>
+                                <a href="">Акції</a>
+                            </li>
+                            <li>
+                                <a href="">Про нас</a>
+
+                            </li>
+                            <li>
+                                <a href="">Бізнес з Turcoffee</a>
+                            </li>
+                            <li>
+                                <a href="">Блог</a>
+                            </li>
+                            <li>
+                                <a href="">Контакти</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="menu-main-bottom">
+                        <p>Приєднуйтесь до нас</p>
+                        <div class="socials-icons">
+                            <a href=""><img src="./images/icons/facebook.svg" alt="facebook"></a>
+                            <a href=""><img src="./images/icons/twitter.svg" alt="twitter"></a>
+                            <a href=""><img src="./images/icons/insta_.png" alt="instagram"></a>
+                            <a href=""><img src="./images/icons/youtube.svg" alt="youtube"></a>
+                            <a href=""><img src="./images/icons/telegram.svg" alt="telegram"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="side-menu__bg">
+
+            </div>
+        </div>
+    </section>
+
+<section class="breadcrumb">
+    <div class="container-block">
+
+        <ul>
+            <li><a href="">Головна</a></li>
+            <li class="slash">/</li>
+            <li><span>Реєстрація</span></li>
+
+        </ul>
+    </div>
+</section>
+<section class="cabinet_section">
+    <div class="container-block">
+        <div class="title-line-block">
+            <div class="title-line-block-text">
+                <h3 class="title-line-block-text-text">
+                    Мій профіль</h3>
+            </div>
+            <div class="title-line-block-line"></div>
+            <div class="profile_nav">
+                <a href="" class="custom-button__white active">Історія замовлень</a>
+                <a href="" class="custom-button__white">Облік ТО і нарахувань</a>
+                <a href="" class="custom-button__white">Мої партнери</a>
+                <a href="" class="custom-button__white">Додати користувача</a>
+            </div>
+
+        </div>
+        <div class="cabinet_content">
+            <div class="cabinet_detail_info">
+                <div class="my_accounts">
+                    <div class="my_accounts_item">
+                        <p class="cab_title_v1">Іван Іванов Іванович</p>
+                        <div class="acc_photo">
+                            <div class="img">
+                                <img src="./images/icons/avatar2.svg" alt="avatar">
+
+                            </div>
+                        </div>
+                        <div class="ref">
+                            <p>Ваше реферальне посилання</p>
+                            <a href="">turcoffee.club/ref/id30459</a>
+                        </div>
+                    </div>
+                    <div class="my_accounts_item">
+                        <p class="cab_title_v1">Ваш наставник</p>
+                        <div class="acc_photo">
+                            <div class="img">
+                                <img src="./images/icons/avatar2.svg" alt="avatar">
+
+                            </div>
+                            <div class="acc_name">
+                                <p>Беззаботний Родіон Арестаркович</p>
+                            </div>
+                        </div>
+                        <div class="ref">
+                            <span>ID 2545436</span>
+                            <a href="">+380505555555</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="acc_events">
+                    <p class="cab_title_v2">
+                        Події
+                    </p>
+                    <div class="acc_events_container">
+                        <div class="acc_events_item">
+                            <div class="img">
+                                <img src="./images/icons/avatar2.svg" alt="avatar">
+
+                            </div>
+                            <div class="acc_events_item_cont">
+                                <div class="content_row">
+                                    <span>2 дні</span>
+                                    <span>тому</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Ваше проведення замовлення</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Замовлення:</span>
+                                    <span>№ 00001</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Покупець:</span>
+                                    <span>Іванов І.І.</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Продавець:</span>
+                                    <span>Беззаботний Р.А.</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Кількість позицій:</span>
+                                    <span>4</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Сума:</span>
+                                    <span>4 757.00</span>
+                                    <span>ТО:</span>
+                                    <span>300.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="acc_events_item">
+                            <div class="img">
+                                <img src="./images/icons/avatar2.svg" alt="avatar">
+
+                            </div>
+                            <div class="acc_events_item_cont">
+                                <div class="content_row">
+                                    <span>2 дні</span>
+                                    <span>тому</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Ваше проведення замовлення</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Замовлення:</span>
+                                    <span>№ 00001</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Покупець:</span>
+                                    <span>Іванов І.І.</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Продавець:</span>
+                                    <span>Беззаботний Р.А.</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Кількість позицій:</span>
+                                    <span>4</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Сума:</span>
+                                    <span>4 757.00</span>
+                                    <span>ТО:</span>
+                                    <span>300.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="acc_events_item">
+                            <div class="img">
+                                <img src="./images/icons/avatar2.svg" alt="avatar">
+
+                            </div>
+                            <div class="acc_events_item_cont">
+                                <div class="content_row">
+                                    <span>2 дні</span>
+                                    <span>тому</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Ваше проведення замовлення</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Замовлення:</span>
+                                    <span>№ 00001</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Покупець:</span>
+                                    <span>Іванов І.І.</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Продавець:</span>
+                                    <span>Беззаботний Р.А.</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Кількість позицій:</span>
+                                    <span>4</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Сума:</span>
+                                    <span>4 757.00</span>
+                                    <span>ТО:</span>
+                                    <span>300.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="acc_events_item">
+                            <div class="img">
+                                <img src="./images/icons/avatar2.svg" alt="avatar">
+
+                            </div>
+                            <div class="acc_events_item_cont">
+                                <div class="content_row">
+                                    <span>2 дні</span>
+                                    <span>тому</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Ваше проведення замовлення</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Замовлення:</span>
+                                    <span>№ 00001</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Покупець:</span>
+                                    <span>Іванов І.І.</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Продавець:</span>
+                                    <span>Беззаботний Р.А.</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Кількість позицій:</span>
+                                    <span>4</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Сума:</span>
+                                    <span>4 757.00</span>
+                                    <span>ТО:</span>
+                                    <span>300.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="acc_events_item">
+                            <div class="img">
+                                <img src="./images/icons/avatar2.svg" alt="avatar">
+
+                            </div>
+                            <div class="acc_events_item_cont">
+                                <div class="content_row">
+                                    <span>2 дні</span>
+                                    <span>тому</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Ваше проведення замовлення</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Замовлення:</span>
+                                    <span>№ 00001</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Покупець:</span>
+                                    <span>Іванов І.І.</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Продавець:</span>
+                                    <span>Беззаботний Р.А.</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Кількість позицій:</span>
+                                    <span>4</span>
+                                </div>
+                                <div class="content_row">
+                                    <span>Сума:</span>
+                                    <span>4 757.00</span>
+                                    <span>ТО:</span>
+                                    <span>300.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="acc_orders">
+
+                    <div class="acc_orders_item">
+                        <p class="cab_title_v2">
+                            Замовлення
+                        </p>
+                        <div class="acc_orders_item_order">
+                        <div class="content_row sum">
+                            <span>Сума:</span>
+                            <span>4757 грн.</span>
+                        </div>
+                        <div class="content_row stock">
+                            <span>Знижка(Акція)</span>
+                            <span>- 200 грн.</span>
+                        </div>
+                        <div class="content_row total">
+                            <span>До сплати:</span>
+                            <span>4257 грн.</span>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="acc_orders_item">
+                        <p class="cab_title_v2">
+                            Статистика
+                        </p>
+                        <div class="order_tabs">
+                            <div class="tabs">
+                                <ul>
+                                    <li class="tab" data-tab-target="#today">Сьогодні<span></span></li>
+                                    <li class="tab" data-tab-target="#mounth">Місяць<span></span></li>
+                                    <li class="tab" data-tab-target="#total">Всього<span></span></li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents">
+                                <div class="tab-content" id="today" data-tab-content>
+                                    <div class="order_row_tab">
+                                        <span>Партнерів</span>
+                                        <span>0</span>
+                                    </div>
+                                    <div class="order_row_tab">
+                                        <span>Проведених замовлень</span>
+                                        <span>0</span>
+                                    </div>
+                                    <div class="order_row_tab">
+                                        <span>Оборот структури</span>
+                                        <span>0.00</span>
+                                    </div>
+                                    <div class="order_row_tab">
+                                        <span>Нараховано комісії</span>
+                                        <span>0.00</span>
+                                    </div>
+                                </div>
+                                <div class="tab-content" id="mounth" data-tab-content>
+                                    <div class="order_row_tab">
+                                        <span>Партнерів</span>
+                                        <span>0</span>
+                                    </div>
+                                    <div class="order_row_tab">
+                                        <span>Проведених замовлень</span>
+                                        <span>0</span>
+                                    </div>
+                                    <div class="order_row_tab">
+                                        <span>Оборот структури</span>
+                                        <span>0.00</span>
+                                    </div>
+                                    <div class="order_row_tab">
+                                        <span>Нараховано комісії</span>
+                                        <span>0.00</span>
+                                    </div>
+                                </div>
+                                <div class="tab-content" id="total" data-tab-content>
+                                    <div class="order_row_tab">
+                                        <span>Партнерів</span>
+                                        <span>0</span>
+                                    </div>
+                                    <div class="order_row_tab">
+                                        <span>Проведених замовлень</span>
+                                        <span>0</span>
+                                    </div>
+                                    <div class="order_row_tab">
+                                        <span>Оборот структури</span>
+                                        <span>0.00</span>
+                                    </div>
+                                    <div class="order_row_tab">
+                                        <span>Нараховано комісії</span>
+                                        <span>0.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="acc_docs">
+                    <p class="cab_title_v2">
+                        Документація
+                    </p>
+                    <div class="acc_docs_content">
+                        <a href="" class="acc_docs_item">
+                            <img src="./images/icons/doc.svg" alt="doc img">
+                            <p>Договір <br> про співпрацю</p>
+                        </a>
+                        <a href="" class="acc_docs_item">
+                            <img src="./images/icons/doc.svg" alt="doc img">
+                            <p>Положення співпраці <br>субагента і Агента</p>
+                        </a>
+                        <a href="" class="acc_docs_item">
+                            <img src="./images/icons/doc.svg" alt="doc img">
+                            <p>Кар'єра <br> і винагороди</p>
+                        </a>
+                        <a href="" class="acc_docs_item">
+                            <img src="./images/icons/doc.svg" alt="doc img">
+                            <p>Договір купівлі продажу Arzum OKKA Туркофі Україна</p>
+                        </a>
+                        <a href="" class="acc_docs_item">
+                            <img src="./images/icons/doc.svg" alt="doc img">
+                            <p>Договір поставки Туркофі Україна</p>
+                        </a>
+                        <a href="" class="acc_docs_item">
+                            <img src="./images/icons/doc.svg" alt="doc img">
+                            <p>Інформація про гарантії та умови</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="cabinet_personal_info">
+                <div class="title-line-block small-title-line-block">
+                    <div class="title-line-block-text">
+                        <h3 class="title-line-block-text-text">
+                            Ваші персональні дані</h3>
+                    </div>
+                    <div class="title-line-block-line"></div>
+                </div>
+                <div class="contacts__form register_form">
+                    <form action="" id="cback-form" class="">
+                        <div class="form__in">
+                            <div class="form_part">
+                                <div class="form-row">
+                                    <input
+                                            class="all-cback-inp"
+                                            value=""
+                                            required
+                                            placeholder="Прізвище"
+                                            name="obj[data][surname]"
+                                            type="text"
+                                    >
+                                    <span class="all-cback-inp-span cback-inp-error-text" id="cback-inp-err-surname-span">*обов`язкове поле</span>
+                                </div>
+                                <div class="form-row">
+                                    <input
+                                            class="all-cback-inp"
+                                            value=""
+                                            required
+                                            placeholder="Ім’я"
+                                            name="obj[data][name]"
+                                            type="text"
+                                    >
+                                    <span class="all-cback-inp-span cback-inp-error-text" id="cback-inp-err-name-span">*обов`язкове поле</span>
+                                </div>
+                                <div class="form-row">
+                                    <input
+                                            type="text"
+                                            class="all-cback-inp"
+                                            value=""
+                                            placeholder="По батькові"
+                                            name="obj[data][fname]"
+                                            im-insert="true"
+                                            required
+                                    >
+                                    <span class="all-cback-inp-span cback-inp-error-text">*обов`язкове поле</span>
+                                </div>
+
+                            </div>
+                            <div class="form_part">
+                                <div class="form-row">
+                                    <input
+                                            type="text"
+                                            class="all-cback-inp phone_mask"
+                                            value=""
+                                            placeholder="Телефон"
+                                            name="obj[data][phone]"
+                                            im-insert="true"
+                                            required
+                                    >
+                                    <span class="all-cback-inp-span cback-inp-error-text">*обов`язкове поле</span>
+                                </div>
+                                <div class="form-row">
+                                    <input
+                                            type="email"
+                                            class="all-cback-inp"
+                                            value=""
+                                            placeholder="Email"
+                                            name="obj[data][email]"
+                                            im-insert="true" required>
+                                    <span class="all-cback-inp-span cback-inp-error-text">*обов`язкове поле</span>
+                                </div>
+
+                                <div class="form-row form_col">
+                                    <div class="form_part">
+                                        <div class="form-row">
+                                            <input
+                                                    type="password"
+                                                    class="all-cback-inp"
+                                                    value=""
+                                                    placeholder="Пароль"
+                                                    required
+                                                    name="obj[data][pas1]"
+                                                    im-insert="true"
+                                            >
+                                            <span class="all-cback-inp-span cback-inp-error-text">*обов`язкове поле</span>
+                                        </div>
+                                    </div>
+                                    <div class="form_part">
+                                        <div class="form-row">
+                                            <input type="password"
+                                                   class="all-cback-inp"
+                                                   value=""
+                                                   placeholder="Пароль(повторити)"
+                                                   required
+                                                   name="obj[data][pas2]"
+                                                   im-insert="true"
+                                            >
+                                            <span class="all-cback-inp-span cback-inp-error-text">*обов`язкове поле</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                       <div class="form-col3">
+                           <div class="form-row">
+                               <input
+                                       class="all-cback-inp"
+                                       value=""
+                                       required
+                                       placeholder="Країна"
+                                       name="obj[data][country]"
+                                       type="text"
+                               >
+                               <span class="all-cback-inp-span cback-inp-error-text" id="cback-inp-err-name-span">*обов`язкове поле</span>
+                           </div>
+                           <div class="form-row">
+                               <input
+                                       class="all-cback-inp"
+                                       value=""
+                                       required
+                                       placeholder="Місто"
+                                       name="obj[data][city]"
+                                       type="text"
+                               >
+                               <span class="all-cback-inp-span cback-inp-error-text" id="cback-inp-err-name-span">*обов`язкове поле</span>
+                           </div>
+                           <div class="form-row">
+                               <input
+                                       class="all-cback-inp"
+                                       value=""
+                                       required
+                                       placeholder="Вулиця (№ дома, № кв.)"
+                                       name="obj[data][street]"
+                                       type="text"
+                               >
+                               <span class="all-cback-inp-span cback-inp-error-text" id="cback-inp-err-name-span">*обов`язкове поле</span>
+                           </div>
+
+                       </div>
+
+                        <button type="submit" class="custom-button__white" id="send-register">Зберегти зміни</button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="cabinet_cooperation_form">
+                <div class="title-line-block small-title-line-block">
+                    <div class="title-line-block-text">
+                        <h3 class="title-line-block-text-text">
+                            Форма співпраці</h3>
+                    </div>
+                    <div class="title-line-block-line"></div>
+                </div>
+                <div class="contacts__form register_form">
+                    <form action="" id="cback-form" class="">
+                        <div class="form__in">
+                            <div class="form_one_col">
+                                <div class="part_row person">
+                                <label class="checkbox option">
+                                    <input type="radio" checked class="check__input hidden-object" value="person" name="businessType">
+                                    <span class="check__box"></span>
+                                    <span class="check__text">Приватна особа</span>
+                                </label>
+                                <div class="form-row">
+                                    <input
+                                            type="text"
+                                            class="all-cback-inp phone_mask"
+                                            value=""
+                                            placeholder=""
+                                            name="obj[data][privatePerson]"
+                                            im-insert="true"
+                                            required
+                                    >
+                                    <span class="all-cback-inp-span cback-inp-error-text">*обов`язкове поле</span>
+                                </div>
+                                </div>
+                                <div class="part_row entrepreneur">
+
+                                <label class="checkbox option">
+                                    <input type="radio" class="check__input hidden-object" value="entrepreneur" name="businessType">
+                                    <span class="check__box"></span>
+                                    <span class="check__text">Підприємець</span>
+                                </label>
+                                <div class="form-row form_col">
+                                    <div class="form_part">
+                                        <div class="form-row">
+                                            <input
+                                                    type="text"
+                                                    class="all-cback-inp"
+                                                    value=""
+                                                    placeholder="МФО"
+                                                    required
+                                                    name="obj[data][mfo]"
+                                                    im-insert="true"
+                                            >
+                                            <span class="all-cback-inp-span cback-inp-error-text">*обов`язкове поле</span>
+                                        </div>
+                                    </div>
+                                    <div class="form_part">
+                                        <div class="form-row">
+                                            <input type="text"
+                                                   class="all-cback-inp"
+                                                   value=""
+                                                   placeholder="ІПН підприємця"
+                                                   required
+                                                   name="obj[data][ipn]"
+                                                   im-insert="true"
+                                            >
+                                            <span class="all-cback-inp-span cback-inp-error-text">*обов`язкове поле</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="form-row">
+                                    <input
+                                            type="text"
+                                            class="all-cback-inp"
+                                            value=""
+                                            placeholder="Розрахунковий рахунок"
+                                            name="obj[data][bankAccount]"
+                                            im-insert="true" required>
+                                    <span class="all-cback-inp-span cback-inp-error-text">*обов`язкове поле</span>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="custom-button__white" id="send-register">Зберегти зміни</button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="cabinet_delivery">
+                <div class="title-line-block small-title-line-block">
+                    <div class="title-line-block-text">
+                        <h3 class="title-line-block-text-text">
+                            Доставка</h3>
+                    </div>
+                    <div class="title-line-block-line"></div>
+                </div>
+                <div class="contacts__form register_form">
+                    <form action="" id="cback-form" class="">
+                        <div class="form__in">
+                            <div class="form_one_col">
+                            <div class="form-row">
+                                <input
+                                        class="all-cback-inp"
+                                        value=""
+                                        required
+                                        placeholder="Відділення Нової Пошти"
+                                        name="obj[data][]"
+                                        type="text"
+                                >
+                                <span class="all-cback-inp-span cback-inp-error-text" id="cback-inp-err-surname-span">*обов`язкове поле</span>
+                            </div>
+                                <div class="form__in">
+                            <div class="form_part">
+                                <div class="form-row">
+                                    <input
+                                            class="all-cback-inp"
+                                            value=""
+                                            required
+                                            placeholder="Місто"
+                                            name="obj[data][city]"
+                                            type="text"
+                                    >
+                                    <span class="all-cback-inp-span cback-inp-error-text" id="cback-inp-err-surname-span">*обов`язкове поле</span>
+                                </div>
+                                <div class="form-row form_col">
+                                    <div class="form_part">
+                                        <div class="form-row">
+                                            <input
+                                                    type="text"
+                                                    class="all-cback-inp"
+                                                    value=""
+                                                    placeholder="Телефон"
+                                                    required
+                                                    name="obj[data][phone]"
+                                                    im-insert="true"
+                                            >
+                                            <span class="all-cback-inp-span cback-inp-error-text">*обов`язкове поле</span>
+                                        </div>
+                                    </div>
+                                    <div class="form_part">
+                                        <div class="form-row">
+                                            <input type="text"
+                                                   class="all-cback-inp"
+                                                   value=""
+                                                   placeholder="Поштовий індекс"
+                                                   required
+                                                   name="obj[data][zip]"
+                                                   im-insert="true"
+                                            >
+                                            <span class="all-cback-inp-span cback-inp-error-text">*обов`язкове поле</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="form_part">
+                                <div class="form-row">
+                                    <input
+                                            type="text"
+                                            class="all-cback-inp phone_mask"
+                                            value=""
+                                            placeholder="Вулиця, (№ дому, № кв.)"
+                                            name="obj[data][street]"
+                                            im-insert="true"
+                                            required
+                                    >
+                                    <span class="all-cback-inp-span cback-inp-error-text">*обов`язкове поле</span>
+                                </div>
+                                <div class="form-row">
+                                    <input
+                                            type="text"
+                                            class="all-cback-inp"
+                                            value=""
+                                            placeholder="ПІБ (одержувач)"
+                                            name="obj[data][recipient]"
+                                            im-insert="true" required>
+                                    <span class="all-cback-inp-span cback-inp-error-text">*обов`язкове поле</span>
+                                </div>
+
+
+                            </div>
+                                </div>
+                        </div>
+                        </div>
+
+                        <button type="submit" class="custom-button__white" id="send-register">Зберегти зміни</button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="cabinet_social">
+                <div class="title-line-block small-title-line-block">
+                    <div class="title-line-block-text">
+                        <h3 class="title-line-block-text-text">
+                            Social Network Links</h3>
+                    </div>
+                    <div class="title-line-block-line"></div>
+                </div>
+                <div class="contacts__form register_form">
+                    <form action="" id="cback-form" class="">
+                        <div class="form__in">
+                            <div class="social_col">
+                                <div class="form-row">
+                                    <div class="social_row">
+                                        <img src="./images/icons/telegram1.svg" alt="telegram">
+                                        <input
+                                                class="all-cback-inp"
+                                                value=""
+                                                required
+                                                placeholder="Логін"
+                                                name="obj[data][telegram]"
+                                                type="text"
+                                        >
+                                    </div>
+                                    <span class="all-cback-inp-span cback-inp-error-text" id="cback-inp-err-surname-span">*обов`язкове поле</span>
+                                </div>
+                                <div class="form-row">
+                                    <div class="social_row">
+                                        <img src="./images/icons/facebook1.svg" alt="facebook1">
+                                        <input
+                                                class="all-cback-inp"
+                                                value=""
+                                                required
+                                                placeholder="Посиланна на вашу сторінку"
+                                                name="obj[data][facebook]"
+                                                type="text"
+                                        >
+                                    </div>
+                                    <span class="all-cback-inp-span cback-inp-error-text" id="cback-inp-err-surname-span">*обов`язкове поле</span>
+                                </div>
+                            </div>
+
+                            <div class="social_col">
+                                <div class="form-row">
+                                    <div class="social_row">
+                                    <img src="./images/icons/insta_.png" alt="instagram">
+                                    <input
+                                            class="all-cback-inp"
+                                            value=""
+                                            required
+                                            placeholder="Посиланна на вашу сторінку"
+                                            name="obj[data][instagram]"
+                                            type="text"
+                                    >
+                                    </div>
+                                    <span class="all-cback-inp-span cback-inp-error-text" id="cback-inp-err-surname-span">*обов`язкове поле</span>
+                                </div>
+                                <div class="form-row">
+                                    <div class="social_row">
+                                        <img src="./images/icons/skype1.svg" alt="skype">
+                                        <input
+                                                class="all-cback-inp"
+                                                value=""
+                                                required
+                                                placeholder="Логін"
+                                                name="obj[data][skype]"
+                                                type="text"
+                                        >
+                                    </div>
+                                    <span class="all-cback-inp-span cback-inp-error-text" id="cback-inp-err-surname-span">*обов`язкове поле</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="custom-button__white" id="send-register">Зберегти зміни</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+</section>
+<section class="footer">
+    <div class="container-block">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="./images/footer/logo_footer.svg" alt="Turcoffee logo">
+            </div>
+            <div class="footer-center">
+                <div class="footer-center-col">
+                    <p class="footer-center-col-title">КОНТАКТИ</p>
+                    <ul>
+                        <li><img src="./images/icons/home.svg" alt=""><span>58000, Україна, <br>
+м. Чернівці, вул. Головна,</span></li>
+                        <li><a href="tel:+3803722555555"><img src="./images/icons/phone.svg" alt=""><span>+38 03722 55 55 55</span></a>
+                        </li>
+                        <li><a href="mailto:turcoffee@gmail.com"><img src="./images/icons/e-mail.svg" alt=""><span>turcoffee@gmail.com</span></a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="footer-center-col">
+                    <p class="footer-center-col-title">Інформація</p>
+                    <ul class="custom-ul">
+                        <li><a href="">Про нас</a></li>
+                        <li><a href="">Каталог</a></li>
+                        <li><a href="">Акції / Знижки</a></li>
+                        <li><a href="">Новинки</a></li>
+                        <li><a href="">Блог</a></li>
+                        <li><a href="">Контакти</a></li>
+                    </ul>
+                </div>
+                <div class="footer-center-col">
+                    <p class="footer-center-col-title">КЛІЄНТАМ</p>
+                    <ul class="custom-ul">
+                        <li><a href="">Бізнес с Turcoffee</a></li>
+                        <li><a href="">Як оформити замовлення</a></li>
+                        <li><a href="">Оплата і доставка</a></li>
+                        <li><a href="">Питання та відповіді</a></li>
+                        <li><a href="">Політика конфідеціальності</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-socials">
+                <div class="">
+                    <p class="footer-socials-title">ОТРИМУЙТЕ ОСТАННІ
+                        ОНОВЛЕННЯ ТА ПРОПОЗИЦІЇ</p>
+                    <input type="email" placeholder="e-mail" class="subscribe-input">
+                    <button class="custom-button">Підпишись</button>
+                </div>
+
+                <div class="socials-icons">
+                    <a href=""><img src="./images/icons/facebook.svg" alt="facebook"></a>
+                    <a href=""><img src="./images/icons/twitter.svg" alt="twitter"></a>
+                    <a href=""><img src="./images/icons/insta_.png" alt="instagram"></a>
+                    <a href=""><img src="./images/icons/youtube.svg" alt="youtube"></a>
+                    <a href=""><img src="./images/icons/telegram.svg" alt="telegram"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="line-red">
+        <div class="container-block"><p>© 2020 Інтернет-магазин Turcoffee</p>
+        </div>
+    </div>
+</section>
+</div>
+<section class="text-templates">
+    <span class="productFavHint" style="display: none">В обране</span>
+    <span class="add-to-cartHint" style="display: none">Додати в кошик</span>
+</section>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js'></script>
+
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+<script type='text/javascript' src='./js/slick-lightbox.js'></script>
+
+
+<script type='text/javascript' src='./js/main.js'></script>
+</body>
+</html>

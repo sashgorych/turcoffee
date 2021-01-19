@@ -150,7 +150,9 @@ function showProgressPopup(){
 function hideProgressPopup(){
     $('.user__progress__popup').removeClass('active')
 }
-setProgresBar(+document.querySelector('.user__status__block').dataset.percent)
+if (document.querySelector('.user__status__block')){
+    setProgresBar(+document.querySelector('.user__status__block').dataset.percent)
+} 
 function setProgresBar(percent) {
     let w = 0;
     if (screen.width > 900) {
@@ -390,7 +392,6 @@ $(document).click(function (e) {
     if (!auth__menu.is(e.target) && auth__menu.has(e.target).length === 0 &&
         !user__data.is(e.target) && user__data.has(e.target).length === 0) {
        hideAuthMenu()
-        console.log('sasas')
     }
     //auth block
     let progressPopup = $(".user__progress_bar_block");
@@ -450,8 +451,6 @@ function round(number, step) {
 }
 
 function checkCounterValue(e) {
-    console.log(checkNumber(e));
-    console.log(e.target.value)
 }
 
 function counterIncrease(e) {
@@ -496,8 +495,6 @@ function setStarInPercent(element, percent) {
     let a = percent % 20;
     let b = Math.trunc(percent / 20)
     let i = 0;
-    console.log(element)
-    console.log(element.querySelectorAll('.rateStarPopup'))
     for (i; i < b; i++) {
         element.querySelectorAll('.rateStarPopup')[i].classList.add('active')
     }
@@ -518,8 +515,6 @@ function priceSliderInit() {
     let element = document.querySelector('.valueMin').closest('.item')
     let minValue = +document.querySelector('.valueMin').dataset.valuemin;
     let maxValue = +document.querySelector('.valueMax').dataset.valuemax;
-    console.log(minValue)
-    console.log(maxValue)
     $("#slider-range").slider({
         range: true,
         min: minValue,
@@ -646,29 +641,35 @@ if(filtersContainer) {
 //product page start
 
 // product img slider start
-$(".product__media-main__img").slick({
-    asNavFor: ".product__media-thumbs",
-    arrows: false
-});
-$(".product__media-thumbs").slick({
-    arrows: true,
-    slidesToShow: 2,
-    asNavFor: ".product__media-main__img",
-    focusOnSelect: true,
-    responsive: [
-        {
-            breakpoint: 576,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3
+if(document.querySelector('.product__media-main__img')) {
+    $(".product__media-main__img").slick({
+        asNavFor: ".product__media-thumbs",
+        arrows: false
+    });
+}
+if(document.querySelector('.product__media-thumbs')) {
+    $(".product__media-thumbs").slick({
+        arrows: true,
+        slidesToShow: 2,
+        asNavFor: ".product__media-main__img",
+        focusOnSelect: true,
+        responsive: [
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
             }
-        }
         ]
-});
-$('.product__media-main__img').slickLightbox({
-    src: 'href',
-    itemSelector: 'a'
-});
+    });
+}
+if(document.querySelector('.product__media-main__img')) {
+    $('.product__media-main__img').slickLightbox({
+        src: 'href',
+        itemSelector: 'a'
+    });
+}
 
 //cut description
 if (document.querySelector('.product__description__content')) {
@@ -695,7 +696,6 @@ $('.product__show__less').click(function (e) {
 
 
 function makeSearchRequest(dataStr) {
-    console.log(dataStr)
 }
 
 //lazy load video from youtube start
@@ -727,7 +727,6 @@ function setupVideo(video) {
 }
 
 function parseMediaURL(media) {
-    console.log(media)
     let regexp = /https:\/\/i\.ytimg\.com\/vi\/([a-zA-Z0-9_-]+)\/maxresdefault\.jpg/i;
     let url = media.src;
     let match = url.match(regexp);
@@ -844,4 +843,44 @@ $('.title-line-block-text-text').click(function () {
     $('.cart').toggleClass('new')
 })
 //cart page end
+
+
+//cabinet start
+
+
+//tabs on cabinet main page
+if(document.querySelector('[data-tab-target]')) {
+    const tabs = document.querySelectorAll('[data-tab-target]');
+    const tabContents = document.querySelectorAll('[data-tab-content]');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = document.querySelector(tab.dataset.tabTarget);
+            tabs.forEach(el => el.classList.remove('active'))
+            tabContents.forEach(tabContent => {
+                tabContent.style.display = "none";
+                tabContent.style.opacity = "0";
+            })
+            // target.classList.add('active')
+            target.style.display = "block";
+            setTimeout(() => {
+                target.style.opacity = "1";
+            }, 100)
+        })
+    })
+    tabs[0].classList.add('active')
+    tabContents[0].style.display = "block";
+}
+//tabs on cabinet main end
+if(document.querySelector('.cabinet_cooperation_form')) {
+    $('.entrepreneur').find('input[type=text]').prop("disabled", true);
+
+    $('.cabinet_cooperation_form input[type=radio]').click(function (e) {
+        $(this).parents('.form__in').find('input[type=text]').prop("disabled", true);
+        if ($(this).attr("checked") == "checked") {
+            $(this).parents('.part_row').find('input[type=text]').prop("disabled", false);
+        }
+        ;
+    })
+}
+//cabinet end
 //# sourceMappingURL=main.js.map
