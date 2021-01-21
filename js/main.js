@@ -882,5 +882,50 @@ if(document.querySelector('.cabinet_cooperation_form')) {
         ;
     })
 }
+
+//history
+if(document.querySelector('.history_table')){
+    $('.show_more_history').click(function (e) {
+        e.preventDefault()
+        $(this).parents('.h_row').toggleClass('active')
+        $(this).parents('.h_row').find('.h_add_content').slideToggle()
+    })
+    $('.h_close').click(function (e) {
+        e.preventDefault();
+        $(this).parents('.h_row').find('.h_add_content').slideUp()
+
+        $(this).parents('.h_row').removeClass('active')
+
+    })
+
+}
+
 //cabinet end
+
+
+//blog start
+if(document.querySelector('.blog_archive')){
+    $('.blog_archive_slider').slick({
+        arrows: false,
+        slidesToShow: 3,
+        focusOnSelect: true,
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow:2,
+                    slidesToScroll:2
+                }
+            },
+            {
+                breakpoint: 670,
+                settings: {
+                    slidesToShow:1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    })
+}
+//blog end
 //# sourceMappingURL=main.js.map
