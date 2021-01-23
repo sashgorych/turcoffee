@@ -289,7 +289,7 @@
             </div>
         </div>
     </section>
-
+<link rel="stylesheet" href="./css/datepicker.css">
 <section class="breadcrumb">
     <div class="container-block">
 
@@ -301,6 +301,7 @@
         </ul>
     </div>
 </section>
+
 <section class="cabinet_section">
     <div class="container-block">
         <div class="title-line-block">
@@ -318,6 +319,10 @@
 
         </div>
         <div class="cabinet_content">
+            <div class="choose_range_container">
+                <input type='text' class="datepicker-here" data-position="right top" />
+
+            </div>
             <div class="order_table_to">
                 <div class="order_table_to_container">
                 <div class="order_row">
@@ -479,3 +484,25 @@
 <script type='text/javascript' src='./js/main.js'></script>
 </body>
 </html>
+
+
+<script src="./js/datepicker.js"></script>
+<script>
+    $('.datepicker-here').datepicker({
+        language: 'ua',
+        inline: true
+
+    })
+    $.fn.datepicker.language['ua'] =  {
+        days: ['Неділя','Понеділок','Вівторок','Середа','Четвер','П\'ятниця','Субота'],
+        daysShort: ['Нд','Пн','Вт','Ср','Чт','Пт','Сб'],
+        daysMin: ['Нд','Пн','Вт','Ср','Чт','Пт','Сб'],
+        months: ['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],
+        monthsShort: ['Січ','Лют','Бер','Кв','Тр','Чер','Лип','Сер','Вер','Жов','Лист','Гр'],
+        today: 'Сьогодні',
+        clear: 'Очистити',
+        dateFormat: 'dd.mm.yyyy',
+        timeFormat: 'hh:ii',
+        firstDay: 1
+    };
+</script>

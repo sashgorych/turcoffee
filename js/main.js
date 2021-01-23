@@ -331,7 +331,10 @@ if (document.querySelector('.banner-slider-pc')) {
 if (document.querySelector('.banner-slider-mobile')) {
     $('.banner-slider-mobile').slick({
         dots: true,
-        arrows: true
+        slidesToShow:1,
+        slidesToScroll:1,
+        arrows: true,
+        lazyLoad: 'ondemand',
     });
 }
 
@@ -693,6 +696,46 @@ $('.product__show__less').click(function (e) {
 })
 
 //product page end
+//login popup start
+
+if(document.querySelector('.login_popup')){
+    $('.menu-main-top-auth a:first-child').click(function (e) {
+        e.preventDefault()
+        let popup =  document.querySelector('.login_popup')
+
+        if(popup.classList.contains('active')){
+            hideLoginPopup()
+        }else{
+            showLoginPopup()
+        }
+    })
+    $('.auth-block a:first-child').click(function (e) {
+        e.preventDefault()
+        let popup =  document.querySelector('.login_popup')
+
+        if(popup.classList.contains('active')){
+            hideLoginPopup()
+        }else{
+            showLoginPopup()
+        }
+    })
+
+}
+function showLoginPopup() {
+    showDarkMenuBg()
+    lockBg()
+    document.querySelector('.login_popup').classList.add('active')
+}
+function hideLoginPopup() {
+    hideDarkMenuBg()
+    unlockBg()
+    document.querySelector('.login_popup').classList.add('active')
+}
+//login popup end
+
+
+
+
 
 
 function makeSearchRequest(dataStr) {
@@ -862,6 +905,7 @@ if(document.querySelector('[data-tab-target]')) {
             })
             // target.classList.add('active')
             target.style.display = "block";
+            tab.classList.add('active')
             setTimeout(() => {
                 target.style.opacity = "1";
             }, 100)
@@ -899,6 +943,29 @@ if(document.querySelector('.history_table')){
     })
 
 }
+
+//partners start
+if(document.querySelector('.partner_row button')){
+    $('.partner_row button').click(function (e) {
+        e.preventDefault();
+        if(!$(this).parents('.structure_table_item').hasClass('active')) {
+            $(this).parents('.structure_table_item_content').closest('.structure_table_item_more').slideToggle()
+            $(this).parents('.structure_table_item').toggleClass('active')
+            console.log($(this).parents('.structure_table_item_content').siblings('.structure_table_item_more').slideToggle());
+        }
+    })
+    $('.structure_table_item_more .h_close').click(function (e) {
+       $(this).parent('.structure_table_item_more').slideUp();
+        $(this).parents('.structure_table_item').removeClass('active');
+    })
+}
+if(document.querySelector('.icon_more')){
+    $('.icon_more').click(function () {
+        $(this).parents('.name').toggleClass('active')
+    })
+}
+
+//partners end
 
 //cabinet end
 

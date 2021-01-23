@@ -296,210 +296,166 @@
         <ul>
             <li><a href="">Головна</a></li>
             <li class="slash">/</li>
-            <li><span>Реєстрація</span></li>
+            <li><span>Мій профіль</span></li>
 
         </ul>
     </div>
 </section>
-
-<section class="register_section">
+<section class="cabinet_section">
     <div class="container-block">
-        <div class="register_left">
-            <img src="./images/default-images/baner1.jpg" alt="">
-            <img src="./images/default-images/baner2.jpg" alt="">
+        <div class="title-line-block">
+            <div class="title-line-block-text">
+                <h3 class="title-line-block-text-text">
+                    Історія замовлень</h3>
+            </div>
+            <div class="title-line-block-line"></div>
+            <div class="profile_nav">
+                <a href="" class="custom-button__white active">Історія замовлень</a>
+                <a href="" class="custom-button__white">Облік ТО і нарахувань</a>
+                <a href="" class="custom-button__white ">Мої партнери</a>
+                <a href="" class="custom-button__white">Додати користувача</a>
+            </div>
+
         </div>
+        <div class="cabinet_content">
+            <div class="cabinet_history_container">
 
-        <div class="register_right">
-            <div class="title-line-block">
-                <div class="title-line-block-text">
-                    <h3 class="title-line-block-text-text">
-                        Реєстрація</h3>
-                </div>
-                <div class="title-line-block-line"></div>
-            </div>
-            <div class="default_register_block">
-            <div class="text_anotation">
-                <p>* Поля обов'язкові для заповнення</p>
-            </div>
-            <div class="contacts__form register_form">
-                <form action="" id="cback-form" class="">
-                    <div class="form__in">
-                        <div class="form_part">
-                            <div class="form-row error">
-                                <span class="label">Прізвище*</span>
-                                <input
-                                        class="all-cback-inp"
-                                        value=""
-                                        required
-                                        placeholder=""
-                                       name="obj[data][surname]"
-                                        type="text"
-                                >
-                                <span class="all-cback-inp-span cback-inp-error-text" id="cback-inp-err-surname-span">*обов`язкове поле</span>
-                            </div>
-                            <div class="form-row">
-                                <span class="label">Ім’я*</span>
-                                <input
-                                        class="all-cback-inp"
-                                        value=""
-                                        required
-                                        placeholder=""
-                                       name="obj[data][name]"
-                                        type="text"
-                                >
-                                <span class="all-cback-inp-span cback-inp-error-text" id="cback-inp-err-name-span">*обов`язкове поле</span>
-                            </div>
-                            <div class="form-row">
-                                <span class="label">По батькові*</span>
-                                <input
-                                        type="text"
-                                        class="all-cback-inp"
-                                        value=""
-                                        placeholder=""
-                                       name="obj[data][fname]"
-                                        im-insert="true"
-                                        required
-                                >
-                                <span class="all-cback-inp-span cback-inp-error-text">*обов`язкове поле</span>
-                            </div>
-
+            <div class="cabinet_history">
+                <div class="history_table">
+                    <div class="h_row">
+                        <div class="h_col">
+                            <p>
+                                Дата і час замовлення
+                            </p>
                         </div>
-                        <div class="form_part">
-                            <div class="form-row">
-                                <span class="label">Телефон*</span>
-                                <input
-                                        type="text"
-                                        class="all-cback-inp phone_mask"
-                                        value=""
-                                        placeholder=""
-                                       name="obj[data][phone]"
-                                        im-insert="true"
-                                        required
-                                >
-                                <span class="all-cback-inp-span cback-inp-error-text">*обов`язкове поле</span>
-                            </div>
-                            <div class="form-row">
-                                <span class="label">Email*</span>
-                                <input
-                                        type="email"
-                                        class="all-cback-inp"
-                                        value=""
-                                        placeholder=""
-                                       name="obj[data][email]"
-                                        im-insert="true" required>
-                                <span class="all-cback-inp-span cback-inp-error-text">*обов`язкове поле</span>
-                            </div>
-
-                            <div class="form-row form_col">
-                                <div class="form_part">
-                                    <div class="form-row">
-                                        <span class="label">Пароль*</span>
-                                        <input
-                                                type="password"
-                                                class="all-cback-inp"
-                                                value=""
-                                               placeholder=""
-                                                required
-                                                name="obj[data][pas1]"
-                                                im-insert="true"
-                                        >
-                                        <span class="all-cback-inp-span cback-inp-error-text">*обов`язкове поле</span>
-                                    </div>
+                        <div class="h_col">
+                            <p>
+                                № замовлення
+                            </p>
+                        </div>
+                        <div class="h_col">
+                            <p>
+                                Форма оплати
+                            </p>
+                        </div>
+                        <div class="h_col">
+                            <p>
+                                Спосіб доставки
+                            </p>
+                        </div>
+                        <div class="h_col">
+                            <p>
+                                Статус
+                            </p>
+                        </div>
+                        <div class="h_col">
+                            <p>
+                                Товари
+                            </p>
+                        </div>
+                    </div>
+                    <div class="history_table_content">
+                    <div class="h_row">
+                        <div class="h_row_content">
+                        <div class="h_main_content">
+                        <div class="h_col">
+                            <p>
+                               21.12.2020
+                            </p>
+                            <p>
+                                14.00
+                            </p>
+                        </div>
+                        <div class="h_col">
+                            <p>
+                              000456
+                            </p>
+                        </div>
+                        <div class="h_col">
+                            <p>
+                                наложений платіж
+                            </p>
+                        </div>
+                        <div class="h_col">
+                            <p>
+                               Нова пошта
+                            </p>
+                        </div>
+                        <div class="h_col">
+                            <p>
+                                Виконано
+                            </p>
+                        </div>
+                        <div class="h_col">
+                            <button class="show_more_history">Показати</button>
+                        </div>
+                        </div>
+                        <div class="h_add_content">
+                            <div class="h_product_table">
+                                <div class="h_p_row">
+                                    <div class="h_p_col"><p>Назва товару</p></div>
+                                    <div class="h_p_col"><p>Вага</p></div>
+                                    <div class="h_p_col"><p>Колір</p></div>
+                                    <div class="h_p_col"><p>Кількість</p></div>
+                                    <div class="h_p_col"><p>Ціна</p></div>
                                 </div>
-                                <div class="form_part">
-                                    <div class="form-row">
-                                        <span class="label">Пароль(повторити)*</span>
-                                        <input type="password"
-                                               class="all-cback-inp"
-                                               value=""
-                                               placeholder=""
-                                               required
-                                               name="obj[data][pas2]"
-                                               im-insert="true"
-                                        >
-                                        <span class="all-cback-inp-span cback-inp-error-text">*обов`язкове поле</span>
+
+                                <div class="h_p_row pr__colors">
+                                    <div class="h_p_col"><p>Кава мелена Elite </p></div>
+                                    <div class="h_p_col">
+                                        <div class="weights">
+                                            <span class="empty">—</span>
+                                            <p class="weight-name">1 кг</p>
+                                        </div>
                                     </div>
+                                    <div class="h_p_col">
+                                        <div class="colors">
+                                            <span class="empty">—</span>
+                                            <span class="color-name" title="Червоний" style="background: red"></span>
+                                        </div>
+                                    </div>
+                                    <div class="h_p_col"><p>1</p></div>
+                                    <div class="h_p_col"><p>250 грн</p></div>
                                 </div>
-
+                                <div class="h_p_row  pr__weight">
+                                    <div class="h_p_col"><p>Кава мелена Elite </p></div>
+                                    <div class="h_p_col">
+                                        <div class="weights">
+                                            <span class="empty">—</span>
+                                            <p class="weight-name">1 кг</p>
+                                        </div>
+                                    </div>
+                                    <div class="h_p_col">
+                                        <div class="colors">
+                                            <span class="empty">—</span>
+                                            <span class="color-name" title="Червоний" style="background: red"></span>
+                                        </div>
+                                    </div>
+                                    <div class="h_p_col"><p>1</p></div>
+                                    <div class="h_p_col"><p>250 грн</p></div>
+                                </div>
+                                <div class="h_total">
+                                    <p>Загальна сума:</p>
+                                    <p>4567 грн.</p>
+                                </div>
                             </div>
-
+                            <div class="h_close">
+                                <p>Закрити</p>
+                                <div class="icon-close"><span></span></div>
+                            </div>
 
                         </div>
                     </div>
-                    <label class="checkbox option">
-                        <input type="checkbox" class="check__input hidden-object" name="type1">
-                        <span class="check__box"></span>
-                        <span class="check__text">Погоджуюся з <a href="">умовами</a></span>
-                    </label>
-                    <button type="submit" class="custom-button__white" id="send-register">Реєстрація</button>
-                </form>
-            </div>
-        </div>
-            <div class="success_register_block">
-                <img src="./images/icons/activ_e-mail.svg" alt="">
-                <div class="text_anotation">
-                    <p>На вказану поштову адресу ми відправили лист з інструкціями для завершення реєстрації
-                        <br>
-                        <br>
-                        Будь ласка, перевірте пошту
-                    </p>
+                    </div>
+                    </div>
                 </div>
-
+                </div>
             </div>
         </div>
+
 
     </div>
 </section>
-
-
-<div class="default_popup login_popup">
-    <div class="popup_close">
-        <div class="icon-close"><span></span></div>
-    </div>
-    <div class="popup_content">
-        <p class="popup_title">Вхід</p>
-        <div class="contacts__form register_form">
-            <form action="" id="" class="">
-                <div class="form__in">
-                    <div class="form_one_col">
-                        <div class="form-row">
-                            <span class="label">Email*</span>
-                            <input
-                                    type="email"
-                                    class="all-cback-inp"
-                                    value=""
-                                    placeholder=""
-                                    name="obj[data][email]"
-                                    im-insert="true" required>
-                            <span class="all-cback-inp-span cback-inp-error-text">*обов`язкове поле</span>
-                        </div>
-
-                        <div class="form-row">
-                            <span class="label">Пароль*</span>
-                            <input
-                                    type="password"
-                                    class="all-cback-inp"
-                                    value=""
-                                    placeholder=""
-                                    required
-                                    name="obj[data][pas1]"
-                                    im-insert="true"
-                            >
-                            <span class="all-cback-inp-span cback-inp-error-text">*обов`язкове поле</span>
-                        </div>
-
-
-
-                    </div>
-                </div>
-                <button type="submit" class="custom-button__white" id="">Вхід</button>
-            </form>
-        </div>
-
-
-    </div>
-</div>
-
 <section class="footer">
     <div class="container-block">
         <div class="footer-container">
