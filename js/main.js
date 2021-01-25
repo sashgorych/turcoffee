@@ -377,6 +377,9 @@ $('.auth').mouseleave(function (e) {
     },200)
 
 })
+$(document).ready(function () {
+
+
 $(document).click(function (e) {
     //language block when click outside
     let language = $(".language");
@@ -401,6 +404,19 @@ $(document).click(function (e) {
     if (!progressPopup.is(e.target) && progressPopup.has(e.target).length === 0) {
         hideProgressPopup()
     }
+    //cabinet. oblik to range popup close
+    //
+    //  let rangePopup = $(".date_range_popup ");
+    //  let rangeTitle = $(".range_title");
+    // if (!rangePopup.is(e.target) && rangePopup.has(e.target).length === 0 &&
+    //     !rangeTitle.is(e.target) && rangeTitle.has(e.target).length === 0 &&
+    //     rangePopup.hasClass('active')) {
+    //     closeRangePopup();
+    // }
+
+
+
+})
 })
 $(document).on('click', '.minus', function (e) {
     if (!isAvailableProductItem(e)) return;
@@ -890,6 +906,25 @@ $('.title-line-block-text-text').click(function () {
 
 //cabinet start
 
+//oblik to start
+
+if(document.querySelector('.title_range_block')){
+    $('.title_range_block').click(function () {
+        openRangePopup()
+    })
+    $('.cancel_range').click(function (e) {
+        e.preventDefault()
+        closeRangePopup();
+    })
+}
+function openRangePopup() {
+    document.querySelector('.date_range_popup').classList.add('active')
+}
+function closeRangePopup() {
+    document.querySelector('.date_range_popup').classList.remove('active')
+}
+//oblik to end
+
 
 //tabs on cabinet main page
 if(document.querySelector('[data-tab-target]')) {
@@ -948,11 +983,18 @@ if(document.querySelector('.history_table')){
 if(document.querySelector('.partner_row button')){
     $('.partner_row button').click(function (e) {
         e.preventDefault();
-        if(!$(this).parents('.structure_table_item').hasClass('active')) {
-            $(this).parents('.structure_table_item_content').closest('.structure_table_item_more').slideToggle()
-            $(this).parents('.structure_table_item').toggleClass('active')
-            console.log($(this).parents('.structure_table_item_content').siblings('.structure_table_item_more').slideToggle());
-        }
+        // if(!$(this).parents('.structure_table_item').hasClass('active')) {
+        //     $(this).parents('.structure_table_item_content').closest('.structure_table_item_more').slideToggle()
+        //     $(this).parents('.structure_table_item').toggleClass('active')
+        //   $(this).parents('.structure_table_item_content').siblings('.structure_table_item_more').slideToggle();
+        // }
+        let parentItem = $(this).parent().parent().parent().parent();
+        let parentItemContainer = $(this).parent().parent().parent();
+        console.log(parentItem)
+
+            parentItem.toggleClass('active')
+            parentItemContainer.siblings('.structure_table_item_more').slideToggle();
+
     })
     $('.structure_table_item_more .h_close').click(function (e) {
        $(this).parent('.structure_table_item_more').slideUp();

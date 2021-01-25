@@ -307,7 +307,7 @@
         <div class="title-line-block">
             <div class="title-line-block-text">
                 <h3 class="title-line-block-text-text">
-                   Облік то і нарахувань</h3>
+                    Облік то і нарахувань</h3>
             </div>
             <div class="title-line-block-line"></div>
             <div class="profile_nav">
@@ -320,83 +320,112 @@
         </div>
         <div class="cabinet_content">
             <div class="choose_range_container">
-                <input type='text' class="datepicker-here" data-position="right top" />
+                <div class="range_title">
+                    <div class="range_title_text">
+                    <p>Звіт за </p>
+                        <p class="title_range_block"> оберіть період</p>
+                        <!--<p class="title_range_block"> 21.02.2020 - 21.02.2020</p>-->
+                    </div>
+                    <div class="range_title_year">
+                        <span>Рік</span>
+                        <ul>
+                            <li><a href="">Поточний</a></li>
+                            <li><a href="">2020</a></li>
+                            <li><a href="">2019</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="date_range_popup">
+                    <form action="">
+                        <div class="date_range_popup_form">
+                            <div class="form_col">
+                            <input type='text' readonly class="datepicker-here" data-position="right top"/>
+                            </div>
+                            <div class="form_col">
+                            <input type='text' readonly class="datepicker-here" data-position="right top"/>
+                            </div>
+                        </div>
+                        <div class="range_popup_buttons">
+                            <button class="range_sub" type="submit">Обрати</button>
+                            <button class="cancel_range">Відмінити</button>
+                        </div>
+                    </form>
+                </div>
 
             </div>
             <div class="order_table_to">
                 <div class="order_table_to_container">
-                <div class="order_row">
-                    <div class="order_col order_col-1"><p>Звіт за міс.</p></div>
-                    <div class="order_col order_col-2">
-                        <p>Власний обсяг</p>
+                    <div class="order_row">
+                        <div class="order_col order_col-1"><p>Звітний місяць</p></div>
+                        <div class="order_col order_col-2">
+                            <p>Власний обсяг</p>
+                        </div>
+                        <div class="order_col order_col-3">
+                            <p>Обсяги структури</p>
+                            <span>(включаючи власні продажі)</span>
+                        </div>
+                        <div class="order_col order_col-4"><p>Комісійні</p></div>
+                        <div class="order_col order_col-5"><p>Загальна сума</p></div>
                     </div>
-                    <div class="order_col order_col-3">
-                        <p>Обсяги структури</p>
-                        <span>(включаючи власні продажі)</span>
+                    <div class="order_row">
+                        <div class="order_col order_col-1"><p>202101</p></div>
+                        <div class="order_col order_col-2">
+                            <p>0.00</p>
+                        </div>
+                        <div class="order_col order_col-3">
+                            <p>5775.00</p>
+                        </div>
+                        <div class="order_col order_col-4"><p>0.00</p></div>
+                        <div class="order_col order_col-5"><p>696 989.85</p></div>
                     </div>
-                    <div class="order_col order_col-4"><p>Комісійні</p></div>
-                    <div class="order_col order_col-5"><p>Загальна сума</p></div>
-                </div>
-                <div class="order_row">
-                    <div class="order_col order_col-1"><p>202101</p></div>
-                    <div class="order_col order_col-2">
-                        <p>0.00</p>
+                    <div class="order_row">
+                        <div class="order_col order_col-1"><p>202101</p></div>
+                        <div class="order_col order_col-2">
+                            <p>0.00</p>
+                        </div>
+                        <div class="order_col order_col-3">
+                            <p>5775.00</p>
+                        </div>
+                        <div class="order_col order_col-4"><p>0.00</p></div>
+                        <div class="order_col order_col-5"><p>696 989.85</p></div>
                     </div>
-                    <div class="order_col order_col-3">
-                        <p>5775.00</p>
+                    <div class="order_row">
+                        <div class="order_col order_col-1"><p>202101</p></div>
+                        <div class="order_col order_col-2">
+                            <p>0.00</p>
+                        </div>
+                        <div class="order_col order_col-3">
+                            <p>5775.00</p>
+                        </div>
+                        <div class="order_col order_col-4"><p>0.00</p></div>
+                        <div class="order_col order_col-5"><p>696 989.85</p></div>
                     </div>
-                    <div class="order_col order_col-4"><p>0.00</p></div>
-                    <div class="order_col order_col-5"><p>696 989.85</p></div>
-                </div>
-                <div class="order_row">
-                    <div class="order_col order_col-1"><p>202101</p></div>
-                    <div class="order_col order_col-2">
-                        <p>0.00</p>
+                    <div class="order_row">
+                        <div class="order_col order_col-1"><p>202101</p></div>
+                        <div class="order_col order_col-2">
+                            <p>0.00</p>
+                        </div>
+                        <div class="order_col order_col-3">
+                            <p>5775.00</p>
+                        </div>
+                        <div class="order_col order_col-4"><p>0.00</p></div>
+                        <div class="order_col order_col-5"><p>696 989.85</p></div>
                     </div>
-                    <div class="order_col order_col-3">
-                        <p>5775.00</p>
+                    <div class="order_row">
+                        <div class="order_col order_col-1"><p>202101</p></div>
+                        <div class="order_col order_col-2">
+                            <p>0.00</p>
+                        </div>
+                        <div class="order_col order_col-3">
+                            <p>5775.00</p>
+                        </div>
+                        <div class="order_col order_col-4"><p>0.00</p></div>
+                        <div class="order_col order_col-5"><p>696 989.85</p></div>
                     </div>
-                    <div class="order_col order_col-4"><p>0.00</p></div>
-                    <div class="order_col order_col-5"><p>696 989.85</p></div>
-                </div>
-                <div class="order_row">
-                    <div class="order_col order_col-1"><p>202101</p></div>
-                    <div class="order_col order_col-2">
-                        <p>0.00</p>
-                    </div>
-                    <div class="order_col order_col-3">
-                        <p>5775.00</p>
-                    </div>
-                    <div class="order_col order_col-4"><p>0.00</p></div>
-                    <div class="order_col order_col-5"><p>696 989.85</p></div>
-                </div>
-                <div class="order_row">
-                    <div class="order_col order_col-1"><p>202101</p></div>
-                    <div class="order_col order_col-2">
-                        <p>0.00</p>
-                    </div>
-                    <div class="order_col order_col-3">
-                        <p>5775.00</p>
-                    </div>
-                    <div class="order_col order_col-4"><p>0.00</p></div>
-                    <div class="order_col order_col-5"><p>696 989.85</p></div>
-                </div>
-                <div class="order_row">
-                    <div class="order_col order_col-1"><p>202101</p></div>
-                    <div class="order_col order_col-2">
-                        <p>0.00</p>
-                    </div>
-                    <div class="order_col order_col-3">
-                        <p>5775.00</p>
-                    </div>
-                    <div class="order_col order_col-4"><p>0.00</p></div>
-                    <div class="order_col order_col-5"><p>696 989.85</p></div>
-                </div>
 
                 </div>
             </div>
         </div>
-
 
 
     </div>
@@ -493,12 +522,12 @@
         inline: true
 
     })
-    $.fn.datepicker.language['ua'] =  {
-        days: ['Неділя','Понеділок','Вівторок','Середа','Четвер','П\'ятниця','Субота'],
-        daysShort: ['Нд','Пн','Вт','Ср','Чт','Пт','Сб'],
-        daysMin: ['Нд','Пн','Вт','Ср','Чт','Пт','Сб'],
-        months: ['Січень','Лютий','Березень','Квітень','Травень','Червень','Липень','Серпень','Вересень','Жовтень','Листопад','Грудень'],
-        monthsShort: ['Січ','Лют','Бер','Кв','Тр','Чер','Лип','Сер','Вер','Жов','Лист','Гр'],
+    $.fn.datepicker.language['ua'] = {
+        days: ['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П\'ятниця', 'Субота'],
+        daysShort: ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+        daysMin: ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+        months: ['Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень'],
+        monthsShort: ['Січ', 'Лют', 'Бер', 'Кв', 'Тр', 'Чер', 'Лип', 'Сер', 'Вер', 'Жов', 'Лист', 'Гр'],
         today: 'Сьогодні',
         clear: 'Очистити',
         dateFormat: 'dd.mm.yyyy',

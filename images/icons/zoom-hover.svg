@@ -1,18 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Creator: CorelDRAW 2018 (64-Bit) -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="2.3761mm" height="2.3463mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-viewBox="0 0 4.05 4"
- xmlns:xlink="http://www.w3.org/1999/xlink">
- <defs>
-  <style type="text/css">
-   <![CDATA[
-    .fil0 {fill:#cc0017;fill-rule:nonzero}
-   ]]>
-  </style>
- </defs>
- <g id="Layer_x0020_1">
-  <metadata id="CorelCorpID_0Corel-Layer"/>
-  <path class="fil0" d="M2.77 2.56l0.02 -0.03c0.22,-0.28 0.34,-0.61 0.34,-0.97 0,-0.86 -0.7,-1.56 -1.56,-1.56 -0.86,0 -1.56,0.7 -1.56,1.56 0,0.86 0.7,1.56 1.56,1.56 0.37,0 0.74,-0.14 1.02,-0.38l0.03 -0.03 1.28 1.28 0.15 -0.15 -1.28 -1.28zm-1.2 0.35l0 0c-0.74,0 -1.34,-0.6 -1.34,-1.34 0,-0.74 0.6,-1.34 1.34,-1.34 0.74,0 1.34,0.6 1.34,1.34 0,0.74 -0.6,1.34 -1.34,1.34z"/>
- </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="8.981" height="8.868" viewBox="0 0 4.05 4" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"><path d="M2.77 2.56l.02-.03c.22-.28.34-.61.34-.97C3.13.7 2.43 0 1.57 0 .71 0 .01.7.01 1.56c0 .86.7 1.56 1.56 1.56.37 0 .74-.14 1.02-.38l.03-.03L3.9 3.99l.15-.15-1.28-1.28zm-1.2.35a1.34 1.34 0 110-2.68 1.34 1.34 0 010 2.68z" fill="#cc0017" fill-rule="nonzero"/></svg>
