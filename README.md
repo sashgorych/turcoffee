@@ -3,9 +3,78 @@
 [Реєстрація](#Реєстрація)
 [Корзина](#Корзина)
 [Кабінет](#Кабінет)
+
+# Форма відгуку
+ось тут ``` <input class="js-rating-input" name="rating" type="hidden" value="5"> ``` знаходиться значення зірочок 
+Перевірку на пустий textarea зробив js-ом.
+
+```
+<div class="default_popup review_popup">
+    <div class="popup_close">
+        <div class="icon-close"><span></span></div>
+    </div>
+    <div class="popup_content">
+        <p class="popup_title">Залишити відгук</p>
+        <div class="contacts__form register_form">
+            <form action="" id="cback-form" class="">
+                <div class="form_one_col">
+                    <div class="form-row">
+                        <div class="menu-main-top-auth authorized">
+                            <div class="authorized__block">
+                                <div class="user__data">
+                                    <div class="user__photo">
+                                        <div class="user__photo_in"><img src="./images/default-images/user_avatars.svg"
+                                                                         alt=""></div>
+                                    </div>
+                                    <div class="user_right_col">
+                                        <div class="user__name"><span>Іван Іванович</span></div>
+                                        <div class="rating_container">
+                                            <span class="label">Ваша оцінка</span>
+                                            <div class="rating-box">
+                                                <div class="rating">
+                                <span class="checked"><input type="radio" name="userside_rating" id="str5"
+                                                             value="5"><label
+                                        for="str5"></label></span>
+                                                    <span class="checked"><input type="radio" name="userside_rating"
+                                                                                 id="str4" value="4"><label
+                                                            for="str4"></label></span>
+                                                    <span class="checked"><input type="radio" name="userside_rating"
+                                                                                 id="str3" value="3"><label
+                                                            for="str3"></label></span>
+                                                    <span class="checked"><input type="radio" name="userside_rating"
+                                                                                 id="str2" value="2"><label
+                                                            for="str2"></label></span>
+                                                    <span class="checked"><input type="radio" name="userside_rating"
+                                                                                 id="str1" value="1"><label
+                                                            for="str1"></label></span>
+                                                </div>
+                                                <input class="js-rating-input" name="rating" type="hidden" value="5">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <textarea placeholder="Написати відгук на продукт..." name="reviewtext"></textarea>
+                        <span class="all-cback-inp-span cback-inp-error-text">*обов`язкове поле</span>
+                    </div>
+                </div>
+                <div class="buttons-row2">
+                    <a class="custom-button__white cancel">Скасувати</a>
+                    <button type="submit" class="custom-button send-review disabled">Залишити відгук</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+```
+
 # Айтем продукту
 стандартний айтем 
-
 ```
  <div class="item">
     <div class="item-wr">
