@@ -769,6 +769,77 @@ if (filtersContainer) {
 //product page start
 
 
+//360 view start
+$('.item-360').click(function (e) {
+    show360Popup(e.target.parentNode)
+})
+$('.item-video').click(function (e) {
+    let target = $('.product__part4')
+    if (target.length) {
+        $('html,body').animate({
+            scrollTop: target.offset().top
+        }, 1000);
+    }
+})
+
+function show360Popup(t) {
+
+    let popup = t.querySelector('.popup360');
+    if (popup) {
+        showDarkMenuBg()
+        lockBg()
+        popup.classList.add('active')
+        init360(t)
+    }
+
+}
+
+function init360(target) {
+    console.log(target)
+    $(target).find('.list-360 li:nth-child(1)').show()
+    $(target).find('.list-360 li:not(:nth-child(1))').hide()
+    var pic_X = $(target).find('.list-360').offset().left;
+    var pic_Y = $(target).find('.list-360').offset().top;
+    var pic_W = $(target).find('.list-360').width() / 2;
+    var pic_H = $(target).find('.list-360').height() / 2;
+    var center_X = pic_X + pic_W;
+    var center_Y = pic_Y + pic_H;
+    var movestop = pic_W / 10;
+    $('.list-360').mousemove(function (event) {
+        var mouse_X = event.pageX;
+        var mouse_Y = event.pageY;
+        if (mouse_X - center_X <= 0) {
+            moveImg(mouse_X, mouse_Y, 'left')
+        } else {
+            moveImg(mouse_X, mouse_Y)
+        }
+    });
+
+    $(".list-360").on("touchmove", function (e) {
+        var mouse_X = e.originalEvent.touches[0].pageX;
+        var mouse_Y = e.originalEvent.touches[0].pageY;
+        console.log(e)
+        if (mouse_X - center_X <= 0) {
+            moveImg(mouse_X, mouse_Y, 'left')
+        } else {
+            moveImg(mouse_X, mouse_Y)
+        }
+
+    });
+
+    function moveImg(m_X, m_Y, dir) {
+        var index = Math.ceil(Math.abs(m_X - center_X) / movestop);
+        if (dir) {
+            $(target).find('.list-360 li').eq(index).show().siblings().hide();
+        } else {
+            $(target).find('.list-360 li').eq(18 - index).show().siblings().hide();
+        }
+    }
+}
+
+//360 view end
+
+
 //reviews set rating start
 var userRating;
 // Check Radio-box
@@ -846,17 +917,18 @@ if (sendRevBtn) {
 // product img slider start
 let arrayProductsSlider = []
 let firstInit = true;
-if(document.querySelector('.product-page')){
+if (document.querySelector('.product-page')) {
     createProductsSliders()
     // prepareCurentProductSlider('.product-page')
 }
-function prepareCurentProductSlider(parentClass){
+
+function prepareCurentProductSlider(parentClass) {
     console.log(parentClass)
     let parent = document.querySelector(parentClass)
     console.log(parent)
     let mainImgSliderId = parent.querySelector('.product__media-main__img').id;
     let navsSliderId = parent.querySelector('.product__media-thumbs').id;
-    if(!parent.querySelector('.product__media-main__img').classList.contains('slick-slider')) {
+    if (!parent.querySelector('.product__media-main__img').classList.contains('slick-slider')) {
         $("#" + mainImgSliderId).slick({
             asNavFor: "#" + navsSliderId,
             arrows: false
@@ -883,14 +955,14 @@ function prepareCurentProductSlider(parentClass){
     }
 }
 
-function createProductsSliders(){
+function createProductsSliders() {
     let products = document.querySelectorAll('.product-page')
-    products.forEach((el,index)=>{
+    products.forEach((el, index) => {
         let mainImgSlider = el.querySelector('.product__media-main__img');
         let navsSlider = el.querySelector('.product__media-thumbs');
         let uniqueIdMainImg = 'product__media-main__img__' + index;
         let uniqueIdNavsSlider = 'product__media-thumbs__' + index;
-        if(firstInit) {
+        if (firstInit) {
             arrayProductsSlider.push([uniqueIdMainImg, uniqueIdNavsSlider])
         }
         mainImgSlider.id = uniqueIdMainImg;
@@ -901,12 +973,14 @@ function createProductsSliders(){
     firstInit = false;
 
 }
+
 //
 // initCurentProductPageSlider()
 //
 function initCurentProductPageSlider(curentProduct) {
     prepareCurentProductSlider(curentProduct)
 }
+
 //
 // function createProductPageSlider() {
 //     if (document.querySelector('.product__media-main__img')) {
@@ -977,11 +1051,11 @@ function initCurentProductPageSlider(curentProduct) {
 // product img slider end
 
 //hide btn show more if no content
-if(document.querySelector('.product__description__content')){
+if (document.querySelector('.product__description__content')) {
     let container = document.querySelectorAll('.product__description__content');
-    container.forEach(el=>{
+    container.forEach(el => {
         let childrenCount = el.children.length;
-        if(childrenCount<2){
+        if (childrenCount < 2) {
             el.querySelector('.product__show__more').classList.add('hidden-object')
         }
     })
@@ -1243,14 +1317,14 @@ $('.title-line-block-text-text').click(function () {
 if (document.querySelector('.title_range_block')) {
     // datapicker init
     datapickerInit()
-$('.range_sub').click(function (e) {
-    e.preventDefault()
-    let startDate = document.querySelector('.data-start').value;
-    let endDate = document.querySelector('.data-end').value;
-    let startArr = startDate.split('.')
-    let endArr = endDate.split('.')
-    getMonthTOData(startArr[1], startArr[2], endArr[1], endArr[2])
-})
+    $('.range_sub').click(function (e) {
+        e.preventDefault()
+        let startDate = document.querySelector('.data-start').value;
+        let endDate = document.querySelector('.data-end').value;
+        let startArr = startDate.split('.')
+        let endArr = endDate.split('.')
+        getMonthTOData(startArr[1], startArr[2], endArr[1], endArr[2])
+    })
     $('.title_range_block').click(function () {
         openRangePopup()
     })
@@ -1259,6 +1333,7 @@ $('.range_sub').click(function (e) {
         closeRangePopup();
     })
 }
+
 function datapickerInit() {
     //change year view
     $('.range_title_year li a').click(function (e) {
@@ -1267,14 +1342,14 @@ function datapickerInit() {
         if (Number.isInteger(year)) {
             // last years
 
-             getMonthTOData(1, year, 12, year);
+            getMonthTOData(1, year, 12, year);
             endDatePicker.datepicker().data('datepicker').selectDate(new Date(year, 11, 31))
             startDatePicker.datepicker().data('datepicker').selectDate(new Date(year, 0, 1))
         } else {
             //current year
             let currentMonth = new Date().getMonth() + 1;
             let currentYear = new Date().getFullYear();
-             getMonthTOData(1, currentYear, currentMonth, currentYear)
+            getMonthTOData(1, currentYear, currentMonth, currentYear)
             endDatePicker.datepicker().data('datepicker').selectDate(new Date(currentYear, currentMonth, 1))
             startDatePicker.datepicker().data('datepicker').selectDate(new Date(currentYear, 0, 1))
         }
@@ -1309,13 +1384,15 @@ function datapickerInit() {
         firstDay: 1
     };
 }
+
 function openRangePopup() {
     document.querySelector('.date_range_popup').classList.add('active')
 }
 
-function getMonthTOData(stDay,stYear, endDay,endYear) {
-    console.log(stDay, stYear,endDay,endYear)
+function getMonthTOData(stDay, stYear, endDay, endYear) {
+    console.log(stDay, stYear, endDay, endYear)
 }
+
 function closeRangePopup() {
     document.querySelector('.date_range_popup').classList.remove('active')
 }
