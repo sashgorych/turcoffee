@@ -38,9 +38,9 @@ $('.page__navigation a.active').click(function (e) {
 
 //header scripts start----------------------------------------------------------------------------
 // default popup
-function showDefaultPopup(titleText="", textHtml="") {
+function showDefaultPopup(titleText = "", textHtml = "") {
     let popup = document.querySelector('.content_popup')
-    if(popup) {
+    if (popup) {
         showDarkMenuBg()
         lockBg()
         let title = document.querySelector('.content_popup .popup_title')
@@ -50,12 +50,14 @@ function showDefaultPopup(titleText="", textHtml="") {
         popup.classList.add('active')
     }
 }
+
 function hideDefaultPopup() {
     hideDarkMenuBg()
     unlockBg()
-   document.querySelector('.content_popup').classList.remove('active')
+    document.querySelector('.content_popup').classList.remove('active')
 
 }
+
 //for menu start----------------------------------------
 function unlockBg() {
     clearMarginInsteadScrollBody();
@@ -136,7 +138,8 @@ $('.open-menu-trigger').click(function (e) {
     showDarkMenuBg();
     lockBg();
 })
-function openCatalogMenu(){
+
+function openCatalogMenu() {
     $('.has-toggle .unit-toggle-span').addClass('active')
     $('.has-toggle .submenu-list').addClass('active')
 }
@@ -445,7 +448,7 @@ $(document).ready(function () {
         let pay_from_bal_btn = $(".pay_from_bal_btn");
         let pay_from_bal_popup = $("..buttons-row .drop_list");
         if (!pay_from_bal_btn.is(e.target) && pay_from_bal_btn.has(e.target).length === 0 &&
-        !pay_from_bal_popup.is(e.target) && pay_from_bal_popup.has(e.target).length === 0) {
+            !pay_from_bal_popup.is(e.target) && pay_from_bal_popup.has(e.target).length === 0) {
             closePayPopup()
         }
 
@@ -549,12 +552,15 @@ function counteReduce(e) {
         input.value = value - step;
     }
 }
-function setProductsRating(){
+
+function setProductsRating() {
     document.querySelectorAll('.rating').forEach(el => {
         setStarInPercent(el, el.dataset.rate)
     })
 }
+
 setProductsRating();
+
 function setStarInPercent(element, percent) {
     let a = percent % 20;
     let b = Math.trunc(percent / 20)
@@ -575,6 +581,58 @@ function setStarInPercent(element, percent) {
 
 
 //catalog page start
+//show/hide filter block start
+$('.show__all_filters').click(function (e) {
+    document.querySelector('.catalog-content').classList.remove('active')
+})
+$('.hide_all_filters').click(function (e) {
+    document.querySelector('.catalog-content').classList.add('active')
+})
+
+//show/hide filter block end
+
+
+//add to cart start
+let counter = makeCounter()
+createContainerCatrPopup()
+
+function makeCounter() {
+    let currentCount = 1;
+    return function () {
+        return currentCount++;
+    };
+}
+
+function createContainerCatrPopup() {
+    document.querySelector('.layout').insertAdjacentHTML('beforeend', `<div class="cart_popup_container"></div>`)
+}
+
+function showAddToCartPopup(content = "") {
+    let id = 'popup' + counter();
+    insertAddToCartPopup(content, id)
+    let block = document.getElementById(id);
+    if (block) {
+        block.classList.add('active')
+        let timeout = setTimeout(function () {
+            block.classList.remove('active')
+            block.parentNode.removeChild(block);
+            clearTimeout(timeout);
+        }, 3000)
+
+    }
+}
+
+function insertAddToCartPopup(content, id) {
+    document.querySelector('.cart_popup_container ').insertAdjacentHTML('beforeend',
+        `<div class="success-popup ${status}" id="${id}">
+                 <img src="/images/check.svg" class="succes_popup_img" alt="success">
+                  <p>${content}</p>
+            </div>`);
+}
+
+//add to cart end
+
+
 function priceSliderInit() {
     if (document.querySelector('.valueMin')) {
         let minValue = +document.querySelector('.valueMin').dataset.valuemin;
@@ -676,7 +734,7 @@ function filterRequest() {
         if (filterForm.elements[i].checked) {
             var fieldName = filterForm.elements[i].name;
             var fieldValue = filterForm.elements[i].value;
-            console.log(fieldName,fieldValue)
+            console.log(fieldName, fieldValue)
 
         }
     }
@@ -713,23 +771,24 @@ if (filtersContainer) {
 
 //reviews set rating start
 var userRating;
-    // Check Radio-box
-    $(".rating input:radio").attr("checked", false);
+// Check Radio-box
+$(".rating input:radio").attr("checked", false);
 
-    $('.rating input').click(function () {
-        $(".rating span").removeClass('checked');
-        $(this).parent().addClass('checked');
+$('.rating input').click(function () {
+    $(".rating span").removeClass('checked');
+    $(this).parent().addClass('checked');
+});
+
+$('input:radio').change(
+    function () {
+        $('.js-rating-input').val(this.value)
+        userRating = this.value;
     });
 
-    $('input:radio').change(
-        function(){
-            $('.js-rating-input').val(this.value)
-            userRating = this.value;
-        });
+function getReviewRating() {
+    return userRating;
+}
 
-    function getReviewRating() {
-        return userRating;
-    }
 //reviews set rating end
 
 
@@ -738,62 +797,74 @@ var userRating;
 //check if valid form
 $('.review_popup textarea').keyup(function (e) {
     let sendBtn = $('.review_popup .send-review');
-    if((e.target.value.length > 3)){
+    if ((e.target.value.length > 3)) {
         sendBtn.removeClass('disabled')
-    }else{
+    } else {
         sendBtn.addClass('disabled')
     }
 })
 $('.review_popup .send-review').click(function (e) {
-    if(e.target.classList.contains('disabled')){
+    if (e.target.classList.contains('disabled')) {
         e.preventDefault()
     }
 })
+
 function showReviewPopup() {
     showDarkMenuBg()
     lockBg()
     let popup = document.querySelector('.review_popup');
-    if(popup){
+    if (popup) {
         popup.classList.add('active')
     }
 
 }
+
 function hideReviewPopup() {
     hideDarkMenuBg()
     unlockBg()
     document.querySelector('.review_popup').classList.remove('active')
 }
-document.querySelector('.review_popup .cancel').addEventListener('click',function (e) {
-    e.preventDefault()
-    hideReviewPopup()
-})
-document.querySelector('.leave__review').addEventListener('click',function (e) {
-    e.preventDefault()
-    showReviewPopup();
-})
+
+let cancelBtn = document.querySelector('.review_popup .cancel');
+if (cancelBtn) {
+    cancelBtn.addEventListener('click', function (e) {
+        e.preventDefault()
+        hideReviewPopup()
+    })
+}
+let sendRevBtn = document.querySelector('.leave__review');
+if (sendRevBtn) {
+    sendRevBtn.addEventListener('click', function (e) {
+        e.preventDefault()
+        showReviewPopup();
+    })
+}
+
 //reviews popup end
 
 
 // product img slider start
-initCurentProductPageSlider()
-function initCurentProductPageSlider() {
-    if($('.product__media-main__img ').hasClass('slick-slider')){
-        destroyProductPageSlider()
-    }
-    createProductPageSlider()
+let arrayProductsSlider = []
+let firstInit = true;
+if(document.querySelector('.product-page')){
+    createProductsSliders()
+    // prepareCurentProductSlider('.product-page')
 }
-function createProductPageSlider() {
-    if (document.querySelector('.product__media-main__img')) {
-        $(".product__media-main__img").slick({
-            asNavFor: ".product__media-thumbs",
+function prepareCurentProductSlider(parentClass){
+    console.log(parentClass)
+    let parent = document.querySelector(parentClass)
+    console.log(parent)
+    let mainImgSliderId = parent.querySelector('.product__media-main__img').id;
+    let navsSliderId = parent.querySelector('.product__media-thumbs').id;
+    if(!parent.querySelector('.product__media-main__img').classList.contains('slick-slider')) {
+        $("#" + mainImgSliderId).slick({
+            asNavFor: "#" + navsSliderId,
             arrows: false
         });
-    }
-    if (document.querySelector('.product__media-thumbs')) {
-        $(".product__media-thumbs").slick({
+        $("#" + navsSliderId).slick({
             arrows: true,
             slidesToShow: 2,
-            asNavFor: ".product__media-main__img",
+            asNavFor: "#" + mainImgSliderId,
             focusOnSelect: true,
             responsive: [
                 {
@@ -805,18 +876,75 @@ function createProductPageSlider() {
                 }
             ]
         });
-    }
-    if (document.querySelector('.product__media-main__img')) {
-        $('.product__media-main__img').slickLightbox({
+        $("#" + mainImgSliderId).slickLightbox({
             src: 'href',
             itemSelector: 'a'
         });
     }
 }
-function destroyProductPageSlider() {
-    $(".product__media-main__img").slick('unslick');
-    $(".product__media-thumbs").slick('unslick');
+
+function createProductsSliders(){
+    let products = document.querySelectorAll('.product-page')
+    products.forEach((el,index)=>{
+        let mainImgSlider = el.querySelector('.product__media-main__img');
+        let navsSlider = el.querySelector('.product__media-thumbs');
+        let uniqueIdMainImg = 'product__media-main__img__' + index;
+        let uniqueIdNavsSlider = 'product__media-thumbs__' + index;
+        if(firstInit) {
+            arrayProductsSlider.push([uniqueIdMainImg, uniqueIdNavsSlider])
+        }
+        mainImgSlider.id = uniqueIdMainImg;
+        navsSlider.id = uniqueIdNavsSlider
+
+
+    })
+    firstInit = false;
+
 }
+//
+// initCurentProductPageSlider()
+//
+function initCurentProductPageSlider(curentProduct) {
+    prepareCurentProductSlider(curentProduct)
+}
+//
+// function createProductPageSlider() {
+//     if (document.querySelector('.product__media-main__img')) {
+//         $(".product__media-main__img").slick({
+//             asNavFor: ".product__media-thumbs",
+//             arrows: false
+//         });
+//     }
+//     if (document.querySelector('.product__media-thumbs')) {
+//         $(".product__media-thumbs").slick({
+//             arrows: true,
+//             slidesToShow: 2,
+//             asNavFor: ".product__media-main__img",
+//             focusOnSelect: true,
+//             responsive: [
+//                 {
+//                     breakpoint: 576,
+//                     settings: {
+//                         slidesToShow: 3,
+//                         slidesToScroll: 3
+//                     }
+//                 }
+//             ]
+//         });
+//     }
+//     if (document.querySelector('.product__media-main__img')) {
+//         $('.product__media-main__img').slickLightbox({
+//             src: 'href',
+//             itemSelector: 'a'
+//         });
+//     }
+// }
+//
+// function destroyProductPageSlider() {
+//     $(".product__media-main__img").slick('unslick');
+//     $(".product__media-thumbs").slick('unslick');
+// }
+
 // if (document.querySelector('.product__media-main__img')) {
 //     $(".product__media-main__img").slick({
 //         asNavFor: ".product__media-thumbs",
@@ -846,6 +974,19 @@ function destroyProductPageSlider() {
 //         itemSelector: 'a'
 //     });
 // }
+// product img slider end
+
+//hide btn show more if no content
+if(document.querySelector('.product__description__content')){
+    let container = document.querySelectorAll('.product__description__content');
+    container.forEach(el=>{
+        let childrenCount = el.children.length;
+        if(childrenCount<2){
+            el.querySelector('.product__show__more').classList.add('hidden-object')
+        }
+    })
+
+}
 
 //cut description
 if (document.querySelector('.product__description__content')) {
@@ -917,15 +1058,18 @@ function hideLoginPopup() {
     unlockBg()
     document.querySelector('.login_popup').classList.remove('active')
 }
+
 $('.login_popup .popup_close').click(function () {
     hideLoginErrorMsg()
 })
+
 function hideLoginErrorMsg() {
     let msg = document.querySelector('.login_popup .login-error-msg');
-    if(msg)
+    if (msg)
         msg.style.display = "none";
 
 }
+
 //login popup end
 
 
@@ -1073,11 +1217,13 @@ function hidePopup() {
     $('.default_popup').removeClass('active')
     specialCheck()
 }
-function specialCheck(){
-    if(document.querySelector('.login_popup')){
+
+function specialCheck() {
+    if (document.querySelector('.login_popup')) {
         hideLoginErrorMsg()
     }
 }
+
 $('.popup_close').click(function () {
     hidePopup();
     unlockBg();
@@ -1095,6 +1241,16 @@ $('.title-line-block-text-text').click(function () {
 //oblik to start
 
 if (document.querySelector('.title_range_block')) {
+    // datapicker init
+    datapickerInit()
+$('.range_sub').click(function (e) {
+    e.preventDefault()
+    let startDate = document.querySelector('.data-start').value;
+    let endDate = document.querySelector('.data-end').value;
+    let startArr = startDate.split('.')
+    let endArr = endDate.split('.')
+    getMonthTOData(startArr[1], startArr[2], endArr[1], endArr[2])
+})
     $('.title_range_block').click(function () {
         openRangePopup()
     })
@@ -1103,11 +1259,63 @@ if (document.querySelector('.title_range_block')) {
         closeRangePopup();
     })
 }
+function datapickerInit() {
+    //change year view
+    $('.range_title_year li a').click(function (e) {
+        e.preventDefault()
+        let year = +e.target.innerHTML
+        if (Number.isInteger(year)) {
+            // last years
 
+             getMonthTOData(1, year, 12, year);
+            endDatePicker.datepicker().data('datepicker').selectDate(new Date(year, 11, 31))
+            startDatePicker.datepicker().data('datepicker').selectDate(new Date(year, 0, 1))
+        } else {
+            //current year
+            let currentMonth = new Date().getMonth() + 1;
+            let currentYear = new Date().getFullYear();
+             getMonthTOData(1, currentYear, currentMonth, currentYear)
+            endDatePicker.datepicker().data('datepicker').selectDate(new Date(currentYear, currentMonth, 1))
+            startDatePicker.datepicker().data('datepicker').selectDate(new Date(currentYear, 0, 1))
+        }
+    })
+    var startDatePicker = $('.data-start').datepicker({
+        language: 'ua',
+        inline: true,
+        dateFormat: 'd.m.yyyy',
+        onSelect: function (formattedDate, date, inst) {
+            endDatePicker.datepicker().data('datepicker').update('minDate', date)
+        }
+
+    })
+
+    var endDatePicker = $('.data-end').datepicker({
+        language: 'ua',
+        inline: true,
+        dateFormat: 'd.m.yyyy'
+
+    })
+
+    $.fn.datepicker.language['ua'] = {
+        days: ['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П\'ятниця', 'Субота'],
+        daysShort: ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+        daysMin: ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+        months: ['Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень'],
+        monthsShort: ['Січ', 'Лют', 'Бер', 'Кв', 'Тр', 'Чер', 'Лип', 'Сер', 'Вер', 'Жов', 'Лист', 'Гр'],
+        today: 'Сьогодні',
+        clear: 'Очистити',
+        dateFormat: 'dd.mm.yyyy',
+        timeFormat: 'hh:ii',
+        firstDay: 1
+    };
+}
 function openRangePopup() {
     document.querySelector('.date_range_popup').classList.add('active')
 }
 
+function getMonthTOData(stDay,stYear, endDay,endYear) {
+    console.log(stDay, stYear,endDay,endYear)
+}
 function closeRangePopup() {
     document.querySelector('.date_range_popup').classList.remove('active')
 }
@@ -1270,18 +1478,21 @@ if (document.querySelector('.draw_up_order')) {
         $('.buttons-row .drop_list').addClass('active')
     })
 }
-function  closePayPopup() {
-    if(document.querySelector('.draw_up_order')) {
+
+function closePayPopup() {
+    if (document.querySelector('.draw_up_order')) {
         $('.buttons-row .drop_list').removeClass('active')
     }
 }
+
 //draw up order end
-let pr = new Promise((resolve,reject )=>{
-    setTimeout( ()=>{
+let pr = new Promise((resolve, reject) => {
+    setTimeout(() => {
         reject('2020')
-    },2000)
-} )
-pr.then(data=>{
+    }, 2000)
+})
+pr.then(data => {
     console.log(data);
 })
+//# sourceMappingURL=main.js.map
 //# sourceMappingURL=main.js.map

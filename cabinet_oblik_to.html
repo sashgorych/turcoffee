@@ -290,6 +290,20 @@
             </div>
         </div>
     </section>
+    <div class="default_popup content_popup">
+        <div class="popup_close">
+            <div class="icon-close"><span></span></div>
+        </div>
+        <div class="popup_content">
+            <p class="popup_title">Підписка на розсилку</p>
+            <div class="text_content">
+                <p>деякий текст деякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текст</p>
+                <p>деякий текст деякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текст</p>
+                <p>деякий текст деякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текст</p>
+                <p>деякий текст деякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текст</p>
+            </div>
+        </div>
+    </div>
 <link rel="stylesheet" href="./css/datepicker.css">
 <section class="breadcrumb">
     <div class="container-block">
@@ -323,7 +337,7 @@
             <div class="choose_range_container">
                 <div class="range_title">
                     <div class="range_title_text">
-                    <p>Звіт за </p>
+                        <p>Звіт за </p>
                         <p class="title_range_block"> оберіть період</p>
                         <!--<p class="title_range_block"> 21.02.2020 - 21.02.2020</p>-->
                     </div>
@@ -340,14 +354,24 @@
                     <form action="">
                         <div class="date_range_popup_form">
                             <div class="form_col">
-                            <input type='text' readonly class="datepicker-here" data-position="right top"/>
+                                <input type='text'
+                                       data-min-view="months"
+                                       data-view="months"
+                                       readonly
+                                       class="datepicker-here data-start"
+                                       data-position="right top"/>
                             </div>
                             <div class="form_col">
-                            <input type='text' readonly class="datepicker-here" data-position="right top"/>
+                                <input type='text'
+                                       readonly
+                                       class="datepicker-here data-end"
+                                       data-min-view="months"
+                                       data-view="months"
+                                       data-position="right top"/>
                             </div>
                         </div>
                         <div class="range_popup_buttons">
-                            <button class="range_sub" type="submit">Обрати</button>
+                            <button class="range_sub">Обрати</button>
                             <button class="cancel_range">Відмінити</button>
                         </div>
                     </form>
@@ -509,30 +533,8 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
 <script type='text/javascript' src='./js/slick-lightbox.js'></script>
-
+<script src="./js/datepicker.js"></script>
 
 <script type='text/javascript' src='./js/main.js'></script>
 </body>
 </html>
-
-
-<script src="./js/datepicker.js"></script>
-<script>
-    $('.datepicker-here').datepicker({
-        language: 'ua',
-        inline: true
-
-    })
-    $.fn.datepicker.language['ua'] = {
-        days: ['Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П\'ятниця', 'Субота'],
-        daysShort: ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-        daysMin: ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-        months: ['Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень'],
-        monthsShort: ['Січ', 'Лют', 'Бер', 'Кв', 'Тр', 'Чер', 'Лип', 'Сер', 'Вер', 'Жов', 'Лист', 'Гр'],
-        today: 'Сьогодні',
-        clear: 'Очистити',
-        dateFormat: 'dd.mm.yyyy',
-        timeFormat: 'hh:ii',
-        firstDay: 1
-    };
-</script>

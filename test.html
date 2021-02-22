@@ -1,106 +1,377 @@
 <html>
 <head>
-    <title>Simple Click Events</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-
-    <!-- jsFiddle will insert css and js -->
     <style>
-        .areas_serve .info_block{
+        .areas_serve .info_block {
             width: 40%;
         }
-        #map_canvas{
-            width: 60%;
+
+        #map_canvas {
+            width: 100%;
+            min-height: 400px;
         }
+
         .areas_serve {
             min-height: 400px;
             width: 100%;
             display: flex;
         }
+
+        .left-map .info_block {
+            transition: .3s;
+            padding: 20px;
+            box-sizing: border-box;
+            position: absolute;
+            left: -100%;
+            top: 0;
+            height: 100%;
+            z-index: 2;
+            width: 200px;
+            background: white;
+        }
+
+        .left-map .info_block.active {
+            left: 0;
+            transition: .3s;
+
+        }
+
+        .left-map {
+            position: relative;
+            width: 50%;
+            height: 100%;
+        }
+
+        .right-map {
+            height: 100%;
+            width: 50%;
+        }
+
+        .do_serve {
+            color: #fff;
+            height: 52px;
+            font-size: 15pt;
+            padding-top: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-family: leelawdb;
+            background-color: #1c6bb5;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .searchBlock {
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .do_serve_bottom input {
+            width: 80%;
+            border: none;
+            color: #a7a9ac;
+            background: #fff;
+            font-size: 24px;
+            padding-left: 10px;
+            font-family: leelawad;
+            height: 36px;
+
+            outline: none;
+        }
+
+        .do_serve_bottom {
+            display: flex;
+            height: 127px;
+            justify-content: center;
+            align-items: center;
+            background-color: #ef4844;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .searchByZipBtn {
+            width: 40px;
+            height: 36px;
+            border: none;
+            cursor: pointer;
+            background: #fff url(../images/svg/free_estimate_znak.svg) no-repeat center center;
+            border-left: 0 none #aeb0b2;
+        }
+
+        .success_search_zip p {
+            margin: 0 0 20px 0;
+        }
+
+        .success_search_zip {
+            font-size: 25px;
+            display: none;
+            height: 200px;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            color: white;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            right: 0;
+            position: absolute;
+        }
+
+        .success_search_zip.success {
+            background: linear-gradient(to bottom, #abeaab 0, #bfffbf 100%);
+            border-top: 10px solid green;
+            display: flex;
+        }
+
+        .success_search_zip.error {
+            background: linear-gradient(to bottom, #ffa0a0 0, #f9c2c2 100%);
+            border-top: 10px solid #d60000;
+            display: flex;
+        }
     </style>
 </head>
-<body>
-<section class="areas_serve re-cnt st-text">
-    <div class="info_block">
-
+<div class="stock_product">
+    <p>Акція</p>
+    <span>-20%</span>
+</div>
+<div class="catalog-title">
+    <span class="price_item">Ціна від: </span>
+    <p class="old-price">530</p>
+    <p class="new-price">510</p>
+    <span>грн./кв.м</span>
+</div>
+<div class="stock_timer">
+    <p class="end_date" style="display: none;">Aug 10, 2021 00:00:00</p>
+    <span class="timer_title">До конца акции:</span>
+    <div class="ul">
+        <div class="li"><span class="days">-0</span></div>
+        <div class="dots li"><p>:</p></div>
+        <div class="li"><span class="hours">0</span></div>
+        <div class="dots li"><p>:</p></div>
+        <div class="li"><span class="minutes">0</span></div>
+        <div class="dots li"><p>:</p></div>
+        <div class="li"><span class="seconds">0</span></div>
     </div>
-    <div id='map_canvas'></div>
-</section>
-<div class="searchBlock">
-    <input type="text" value="89109" id="searchByZip">
-    <button class="searchByZipBtn" >search</button>
+</div>
+<body>
+<div class="google_map_zip">
+    <section class="areas_serve re-cnt st-text">
+        <div class='left-map'>
+            <div class="success_search_zip">
+                <p><span class="zip"></span> may be outside our service area</p>
+                <span>Please try another location</span>
+            </div>
+            <div class="info_block">
 
+            </div>
+            <div id='map_canvas'></div>
+        </div>
+        <div class="right-map">
+            <div class="searchBlock">
+                <div class="do_serve">
+                    <p>Do we serve your area?</p>
+                </div>
+                <div class="do_serve_bottom">
+                    <input type="text" value="" placeholder="Enter your zip code" id="searchByZip">
+                    <button class="searchByZipBtn">search</button>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
 </div>
 </body>
 </html>
-1) Відобразити маркери з зіп кодами
-2) при кліку на маркер підсвітити область цього зіпу та відобразити інформацію по ньому
-3) Пошук по зіп кодам. Водиться зіп, при кліку на кнопку 'пошук' перемістити центр карти на маркер, виділити регіон і відобразити інформацію.
+<ul class="catalog-block">
+    <li class="stock">
+        <div class="stock_product">
+            <p>Акція</p>
+            <span>-20%</span>
+        </div>
+        <div class="img-block">
+            <div class="stock_timer">
+                <p class="end_date" style="display: none;">Feb 16, 2021 00:00:00</p>
+                <span class="timer_title">До конца акции:</span>
+                <div class="ul">
+                    <div class="li"><span class="days">-0</span></div>
+                    <div class="dots li"><p>:</p></div>
+                    <div class="li"><span class="hours">0</span></div>
+                    <div class="dots li"><p>:</p></div>
+                    <div class="li"><span class="minutes">0</span></div>
+                    <div class="dots li"><p>:</p></div>
+                    <div class="li"><span class="seconds">0</span></div>
+                </div>
+            </div>
 
-<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+            <a href="/ru/catalog/item/1231633-Laminat-Dub-naturalnyy-Tennessee---CREO-CR3180"><img
+                    alt="Ламинат Дуб натуральный Tennessee - CREO | CR3180"
+                    src="/thumbnail.php?page=items-list&amp;file=catalogphoto/catalog-1231633-2092213947.jpeg"></a>
+        </div>
+        <div class="catalog-title">530 грн./кв.м</div>
+        <div class="catalog-text"><a href="/ru/catalog/item/1231633-Laminat-Dub-naturalnyy-Tennessee---CREO-CR3180">Ламинат
+            Дуб натуральный Tennessee - CREO | CR3180</a></div>
+        <!--<div class="vendor-code">Артикул: </div>-->
+        <a href="#" class="backet-catalog add-item-to-cart" data-item-id="1231633" data-item-edizm="m2">
+            <p class="catalog-button-p">Добавить в корзину</p>
+        </a>
+    </li>
+    <li class="stock">
+        <div class="stock_product">
+            <p>Акція</p>
+            <span>-20%</span>
+        </div>
+        <div class="img-block">
+            <div class="stock_timer">
+                <p class="end_date" style="display: none;">Aug 10, 2021 00:00:00</p>
+                <span class="timer_title">До конца акции:</span>
+                <div class="ul">
+                    <div class="li"><span class="days">-0</span></div>
+                    <div class="dots li"><p>:</p></div>
+                    <div class="li"><span class="hours">0</span></div>
+                    <div class="dots li"><p>:</p></div>
+                    <div class="li"><span class="minutes">0</span></div>
+                    <div class="dots li"><p>:</p></div>
+                    <div class="li"><span class="seconds">0</span></div>
+                </div>
+            </div>
+
+            <a href="/ru/catalog/item/1231631-Laminat-Dub-naturalnyy-Virginia---CREO-CR3182"><img
+                    alt="Ламинат Дуб натуральный Virginia - CREO | CR3182"
+                    src="/thumbnail.php?page=items-list&amp;file=catalogphoto/catalog-1231631-1947161850.jpeg"></a>
+        </div>
+        <div class="catalog-title stock">
+            <p class="old-price">530</p>
+            <p class="new-price">510</p>
+            <span>грн./кв.м</span>
+        </div>
+        <div class="catalog-text"><a href="/ru/catalog/item/1231631-Laminat-Dub-naturalnyy-Virginia---CREO-CR3182">Ламинат
+            Дуб натуральный Virginia - CREO | CR3182</a></div>
+        <!--<div class="vendor-code">Артикул: </div>-->
+        <a href="#" class="backet-catalog add-item-to-cart" data-item-id="1231631" data-item-edizm="m2">
+            <p class="catalog-button-p">Добавить в корзину</p>
+        </a>
+    </li>
+    <li>
+        <div class="img-block"><a href="/ru/catalog/item/1231629-Laminat-Dub-svetlyy-Tennessee---CREO-CR3179"><img
+                alt="Ламинат Дуб светлый Tennessee - CREO | CR3179"
+                src="/thumbnail.php?page=items-list&amp;file=catalogphoto/catalog-1231629-1680854120.jpeg"></a></div>
+        <div class="catalog-title">530 грн./кв.м</div>
+        <div class="catalog-text"><a href="/ru/catalog/item/1231629-Laminat-Dub-svetlyy-Tennessee---CREO-CR3179">Ламинат
+            Дуб светлый Tennessee - CREO | CR3179</a></div>
+        <!--<div class="vendor-code">Артикул: </div>-->
+        <a href="#" class="backet-catalog add-item-to-cart" data-item-id="1231629" data-item-edizm="m2">
+            <p class="catalog-button-p">Добавить в корзину</p>
+        </a>
+    </li>
+</ul>
+<!--<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>-->
 
 <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxfTnzz6HM2jdqIIiM3wkSzfU8mz1k_zU&callback=initMap"></script>-->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxfTnzz6HM2jdqIIiM3wkSzfU8mz1k_zU"></script>
 <script>
-    let d = '88901,88905,89001,89002,89003,89004,89005,89006,89007,89008,89009,89010,89011,89012,89013,89014,89015,89016,89017,89018,89019,89020,89021,89022,89023,89024,89025,89026,89027,89028,89029,89030,89031,89032,89033,89034,89036,89037,89039,89040,89041,89042,89043,89044,89045,89046,89047,89048,89049,89052,89053,89054,89060,89061,89067,89070,89074,89077,89081,89084,89085,89086,89087,89101,89102,89103,89104,89105,89106,89107,89108,89109,89110,89111,89112,89113,89114,89115,89116,89117,89118,89119,89120,89121,89122,89123,89124,89125,89126,89127,89128,89129,89130,89131,89132,89133,89134,89135,89136,89137,89138,89139,89140,89141,89142,89143,89144,89145,89146,89147,89148,89149,89150,89151,89152,89153,89154,89155,89156,89157,89158,89159,89160,89161,89162,89163,89164,89165,89166,89169,89170,89173,89177,89178,89179,89180,89183,89185,89191,89193,89195,89199,89301,89310,89311,89314,89315,89316,89317,89318,89319,89402,89403,89404,89405,89406,89407,89408,89409,89410,89411,89412,89413,89414,89415,89418,89419,89420,89421,89422,89423,89424,89425,89426,89427,89428,89429,89430,89431,89432,89433,89434,89435,89436,89438,89439,89440,89441,89442,89444,89445,89446,89447,89448,89449,89450,89451,89452,89460,89496,89501,89502,89503,89504,89505,89506,89507,89508,89509,89510,89511,89512,89513,89515,89519,89520,89521,89523,89533,89555,89557,89570,89595,89599,89701,89702,89703,89704,89705,89706,89711,89712,89713,89714,89721,89801,89802,89803,89815,89820,89821,89822,89823,89825,89826,89828,89830,89831,89832,89833,89834,89835,89883'
+    // let d = '88901,88905,89001,89002,89003,89004,89005,89006,89007,89008,89009,89010,89011,89012,89013,89014,89015,89016,89017,89018,89019,89020,89021,89022,89023,89024,89025,89026,89027,89028,89029,89030,89031,89032,89033,89034,89036,89037,89039,89040,89041,89042,89043,89044,89045,89046,89047,89048,89049,89052,89053,89054,89060,89061,89067,89070,89074,89077,89081,89084,89085,89086,89087,89101,89102,89103,89104,89105,89106,89107,89108,89109,89110,89111,89112,89113,89114,89115,89116,89117,89118,89119,89120,89121,89122,89123,89124,89125,89126,89127,89128,89129,89130,89131,89132,89133,89134,89135,89136,89137,89138,89139,89140,89141,89142,89143,89144,89145,89146,89147,89148,89149,89150,89151,89152,89153,89154,89155,89156,89157,89158,89159,89160,89161,89162,89163,89164,89165,89166,89169,89170,89173,89177,89178,89179,89180,89183,89185,89191,89193,89195,89199,89301,89310,89311,89314,89315,89316,89317,89318,89319,89402,89403,89404,89405,89406,89407,89408,89409,89410,89411,89412,89413,89414,89415,89418,89419,89420,89421,89422,89423,89424,89425,89426,89427,89428,89429,89430,89431,89432,89433,89434,89435,89436,89438,89439,89440,89441,89442,89444,89445,89446,89447,89448,89449,89450,89451,89452,89460,89496,89501,89502,89503,89504,89505,89506,89507,89508,89509,89510,89511,89512,89513,89515,89519,89520,89521,89523,89533,89555,89557,89570,89595,89599,89701,89702,89703,89704,89705,89706,89711,89712,89713,89714,89721,89801,89802,89803,89815,89820,89821,89822,89823,89825,89826,89828,89830,89831,89832,89833,89834,89835,89883'
     let myZipData = [
         {
-            zip:'89135',
-            descrTitle:"89135",
-            descrContent:"<p>We are serve this zip</p>",
-            link:''
+            zip: '89135',
+            descrTitle: "89135",
+            descrContent: "<p>We are serve this zip</p>",
+            link: ''
         },
         {
-            zip:'89117',
-            descrTitle:"89117",
-            descrContent:"<p>We are serve this zip</p>"
+            zip: '89117',
+            descrTitle: "89117",
+            descrContent: "<p>We are serve this zip</p>"
         },
         {
-            zip:'89147',
-            descrTitle:"89147",
-            descrContent:"<p>We are serve this zip</p>"
+            zip: '89147',
+            descrTitle: "89147",
+            descrContent: "<p>We are serve this zip</p>"
         },
         {
-            zip:'89032',
-            descrTitle:"89032",
-            descrContent:"<p>We are serve this zip</p>"
+            zip: '89032',
+            descrTitle: "89032",
+            descrContent: "<p>We are serve this zip</p>"
         },
         {
-            zip:'89109',
-            descrTitle:"89109",
-            descrContent:"<p>We are serve this zip</p>"
+            zip: '89109',
+            descrTitle: "89109",
+            descrContent: "<p>We are serve this zip</p>"
         }
     ]
     let myZipInfo = [];
     let allZips = [];
-    let allZipsInfo = getZips();
+    let allZipsInfo;
     var map1;
     var curentPolygon;
     var curentPopup;
     var markers = [];
-    document.querySelector('.searchByZipBtn').addEventListener('click',function (e) {
+
+    function getData() {
+        let x = fetch('https://raw.githubusercontent.com/sashgorych/sashgorych.github.io/master/zipData.json').then(res => res.json())
+        return x;
+    }
+
+    document.querySelector('.searchByZipBtn').addEventListener('click', function (e) {
         let zip = document.querySelector('#searchByZip').value;
-        markers.forEach(el=>{
-            if(el.marker.title == zip){
+        let find = false;
+        markers.forEach(el => {
+            if (el.marker.title == zip) {
+                find = true;
                 let lat = el.marker.position.lat();
                 let lng = el.marker.position.lng();
-                let place = { lat: lat, lng: lng };
+                let place = {lat: lat, lng: lng};
                 map1.setCenter(place);
                 // showPopup(el)
-                showInfoBlock(el.markerPopupTitle, el.markerPopupContent,el.link)
-
+                hidePopupServe()
+                showInfoBlock(el.markerPopupTitle, el.markerPopupContent, el.link)
                 higlightArea(el.marker)
             }
         })
+        if (!find) {
+            hidePopupInfo()
+            clearHighliteArea()
+            showPopupServe('error', zip)
+        }
     })
-    function showInfoBlock(title,content,link = "") {
-        let htmlContent = `<h2 class="info_block_title intro">${title}</h2> <div class="info_block_content">${content}</div> <div class="info_block_link"><a href="${link}">Visit page</a></div>`
-        let container =   document.querySelector('.areas_serve .info_block');
+
+    function clearHighliteArea() {
+        if (curentPolygon) {
+            curentPolygon.setMap(null);
+        }
+    }
+
+    function hidePopupServe() {
+        let popup = document.querySelector('.success_search_zip');
+        popup.classList.remove('error')
+        popup.classList.remove('success')
+    }
+
+    function hidePopupInfo() {
+        let container = document.querySelector('.areas_serve .info_block');
+        container.classList.remove('active');
+
+    }
+
+    function showPopupServe(status, zip) {
+        let popup = document.querySelector('.success_search_zip');
+        popup.classList.add(status)
+        let popupText = popup.querySelector('span.zip')
+        popupText.innerHTML = zip
+    }
+
+    function showInfoBlock(title, content, link = "") {
+        let htmlContent = `
+<h2 class="info_block_title intro">${title}</h2>
+<div class="tooltip-google-map"><div class="close_google_popup"></div></div>
+<div class="info_block_content">${content}</div>
+<div class="info_block_link">
+<a href="${link}">Visit page</a>
+</div>`
+        let container = document.querySelector('.areas_serve .info_block');
         container.innerHTML = "";
+        container.classList.add('active');
         container.insertAdjacentHTML('beforeEnd', htmlContent)
 
     }
 
-    function createPopup(title,content) {
+    function createPopup(title, content) {
         return '<div id="content">' +
             '<div id="siteNotice">' +
             "</div>" +
@@ -108,10 +379,11 @@
             title +
             '</h1>' +
             '<div id="bodyContent">' +
-                content
-            "</div>" +
-            "</div>";
+            content
+        "</div>" +
+        "</div>";
     }
+
     const getAddress = address => {
         return new Promise((resolve, reject) => {
             const geocoder = new google.maps.Geocoder();
@@ -124,6 +396,7 @@
             });
         });
     };
+
     async function createOneMarker(markerInfo) {
         let location = await getAddress(markerInfo.name);
         let lat = location.lat();
@@ -136,71 +409,79 @@
 
         });
         let myinfowindow = new google.maps.InfoWindow({
-           content: createPopup(markerInfo.descrTitle,markerInfo.descrContent),
-       });
+            content: createPopup(markerInfo.descrTitle, markerInfo.descrContent),
+        });
         markers.push(
             {
-                marker:myMarker,
-                popup:myinfowindow,
-                markerPopupTitle:markerInfo.descrTitle,
-                markerPopupContent:markerInfo.descrContent,
+                marker: myMarker,
+                popup: myinfowindow,
+                markerPopupTitle: markerInfo.descrTitle,
+                markerPopupContent: markerInfo.descrContent,
                 link: markerInfo.link
             })
         return true;
     }
-   async function createMarkers() {
-       // let allZip = getZips();
-       myZipInfo = chooseOnlyMy(allZipsInfo,myZipData)
-       for (let i=0; i<myZipInfo.length; i++){
-           await createOneMarker(myZipInfo[i]);
-       }
+
+    async function createMarkers() {
+        // let allZip = getZips();
+        allZipsInfo = await getData()
+        myZipInfo = chooseOnlyMy(allZipsInfo, myZipData)
+        for (let i = 0; i < myZipInfo.length; i++) {
+            await createOneMarker(myZipInfo[i]);
+        }
         drawAllMarkers(markers)
     }
-    function drawAllMarkers(markersArray){
-       markersArray.forEach(el=>{
-           el.marker.setMap(map1);
 
-           el.marker.addListener("click", () => {
-               // showPopup(el)
-               showInfoBlock(el.markerPopupTitle, el.markerPopupContent,el.link)
-               higlightArea(el.marker)
-           });
-       })
+    function drawAllMarkers(markersArray) {
+        markersArray.forEach(el => {
+            el.marker.setMap(map1);
+
+            el.marker.addListener("click", () => {
+                // showPopup(el)
+                showInfoBlock(el.markerPopupTitle, el.markerPopupContent, el.link)
+                higlightArea(el.marker)
+            });
+        })
 
     }
-    function showPopup(element){
-       if(curentPopup){
-           curentPopup.close();
-       }
+
+    function showPopup(element) {
+        if (curentPopup) {
+            curentPopup.close();
+        }
         curentPopup = element.popup;
         element.popup.open(map1, element.marker);
 
     }
-    function higlightArea(marker){
+
+    function higlightArea(marker) {
         let lat = marker.position.lat();
         let lng = marker.position.lng();
-                myZipInfo.forEach(el=>{
-                    if(el.name == marker.title){
-                        showPolygon(el.value)
-                    }
-                })
+        myZipInfo.forEach(el => {
+            if (el.name == marker.title) {
+                showPolygon(el.value)
+            }
+        })
 
     }
-    function chooseOnlyMy(all,myZips) {
-       let my = []
-        myZips.forEach(el=>{
-            all.forEach(el2=>{
-                if (el.zip == el2.name){
+
+    function chooseOnlyMy(all, myZips) {
+        console.log(all)
+        let my = []
+        myZips.forEach(el => {
+            all.forEach(el2 => {
+                if (el.zip == el2.name) {
                     el2.descrTitle = el.descrTitle;
                     el2.descrContent = el.descrContent;
                     el2.link = el.link;
-                 my.push(el2)
+                    my.push(el2)
                     return false
                 }
             })
         })
         return my;
     }
+
     const start = async () => {
         map1 = new google.maps.Map(document.getElementById('map_canvas'), {
             zoom: 12,
@@ -210,13 +491,13 @@
         createMarkers()
     }
     start()
-    
+
     function getArea() {
 
         const settings = {
             "async": true,
             "crossDomain": true,
-            "url": "https://vanitysoft-boundaries-io-v1.p.rapidapi.com/rest/v1/public/boundary/zipcode?zipcode="+d,
+            "url": "https://vanitysoft-boundaries-io-v1.p.rapidapi.com/rest/v1/public/boundary/zipcode?zipcode=" + d,
             "method": "GET",
             "headers": {
                 "x-rapidapi-key": "d5b458ed0amsh46ed8e0eb522572p14d288jsn32cbfb93a3ba",
@@ -224,41 +505,44 @@
             }
         };
         $.ajax(settings).done(function (response) {
-            response.features.forEach(el=> {
+            response.features.forEach(el => {
                 let arr = []
-               let name =  el.properties.zipCode
+                let name = el.properties.zipCode
                 el.geometry.coordinates[0].forEach(el => {
                     arr.push({
                         lat: el[1],
                         lng: el[0]
                     })
                 })
-                allZips.push({name:name, value: arr})
+                allZips.push({name: name, value: arr})
             })
-        localStorage.setItem('zips', JSON.stringify(allZips))
+            localStorage.setItem('zips', JSON.stringify(allZips))
         });
 
     }
-function getZips() {
-    let a =JSON.parse(localStorage.getItem('zips'))
-return a;
-   }
-   function saveTolocal(){
+
+    function getZips() {
+        let a = JSON.parse(localStorage.getItem('zips'))
+        return a;
+    }
+
+    function saveTolocal() {
         localStorage.setItem('zips', JSON.stringify(allZipsInfo))
-   }
-function showPolygon(coordinates) {
-    if(curentPolygon) {
-        curentPolygon.setMap(null);
+    }
+
+    function showPolygon(coordinates) {
+        if (curentPolygon) {
+            curentPolygon.setMap(null);
         }
-    curentPolygon = new google.maps.Polygon({
-        paths: coordinates,
-        strokeColor: "#FF0000",
-        strokeOpacity: 0.8,
-        strokeWeight: 2,
-        fillColor: "#FF0000",
-        fillOpacity: 0.35,
-    });
-    curentPolygon.setMap(map1);
-}
+        curentPolygon = new google.maps.Polygon({
+            paths: coordinates,
+            strokeColor: "#FF0000",
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: "#FF0000",
+            fillOpacity: 0.35,
+        });
+        curentPolygon.setMap(map1);
+    }
 
 </script>

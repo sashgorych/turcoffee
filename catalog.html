@@ -290,6 +290,20 @@
             </div>
         </div>
     </section>
+    <div class="default_popup content_popup">
+        <div class="popup_close">
+            <div class="icon-close"><span></span></div>
+        </div>
+        <div class="popup_content">
+            <p class="popup_title">Підписка на розсилку</p>
+            <div class="text_content">
+                <p>деякий текст деякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текст</p>
+                <p>деякий текст деякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текст</p>
+                <p>деякий текст деякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текст</p>
+                <p>деякий текст деякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текстдеякий текст</p>
+            </div>
+        </div>
+    </div>
 
 <section class="breadcrumb">
     <div class="container-block">
@@ -308,80 +322,81 @@
     <div class="container-block">
         <div class="catalog-content">
             <div class="catalog-filters">
+                <button class="custom-button__white show__all_filters">Показати фільтри</button>
                 <form action="" id="turcoffee_product_filter">
-                <div class="item">
-                    <div class="item_top">
-                    <p class="custom-link">Фільтри</p>
-                    <div class="icon-close"><span></span></div>
+                    <div class="icon-close hide_all_filters"><span></span></div>
+                    <div class="item">
+                        <div class="item_top">
+                            <p class="custom-link">Фільтри</p>
+                            <div class="icon-close"><span></span></div>
+                        </div>
                     </div>
-                </div>
+                    <div class="item">
+                        <div class="item-in">
+                            <p class="f-title active">Ціна</p>
+                            <div class="content active">
+                                <div class="slide">
+                                    <p data-valueMin="0" class="t-hide valueMin"></p>
+                                    <p data-valueMax="400" class="t-hide valueMax"></p>
+                                    <div class="price-slider price-slider-range">
+                                        <div class="price-slider-input-show">
+                                            <input type="text" inputmode="numeric" value="0" class="inp" id="min">
+                                            <input type="text" inputmode="numeric" value="400" class="inp" id="max">
+                                        </div>
+                                        <div id="slider-range"></div>
 
-                <div class="item">
-                    <div class="item-in">
-                        <p class="f-title active">Ціна</p>
-                        <div class="content active">
-                            <div class="slide">
-                                <p data-valueMin="0" class="t-hide valueMin"></p>
-                                <p data-valueMax="400" class="t-hide valueMax"></p>
-                                <div class="price-slider price-slider-range">
-                                    <div class="price-slider-input-show">
-                                        <input type="text" inputmode="numeric" value="0" class="inp" id="min">
-                                        <input type="text" inputmode="numeric" value="400"  class="inp" id="max">
                                     </div>
-                                    <div id="slider-range"></div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="item-in">
-                        <p class="f-title">Тип</p>
-                        <div class="content">
-                            <label class="check option">
-                                <input type="checkbox" class="check__input hidden-object" name="type1">
-                                <span class="check__box"></span>
-                                <span class="check__text">Гейзерна електрична</span>
-                            </label>
-                            <label class="check option">
-                                <input type="checkbox" class="check__input hidden-object" name="type2">
-                                <span class="check__box"></span>
-                                <span class="check__text">Електрична турка</span>
-                            </label>
+                    <div class="item">
+                        <div class="item-in">
+                            <p class="f-title">Тип</p>
+                            <div class="content">
+                                <label class="check option">
+                                    <input type="checkbox" class="check__input hidden-object" name="type1">
+                                    <span class="check__box"></span>
+                                    <span class="check__text">Гейзерна електрична</span>
+                                </label>
+                                <label class="check option">
+                                    <input type="checkbox" class="check__input hidden-object" name="type2">
+                                    <span class="check__box"></span>
+                                    <span class="check__text">Електрична турка</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="item-in">
-                        <p class="f-title">Об'єм резервуара для води</p>
-                        <div class="content">
-                            <label class="check option">
-                                <input type="checkbox" class="check__input hidden-object" name="capacity1">
-                                <span class="check__box"></span>
-                                <span class="check__text">1 - 1.4 л</span>
-                            </label>
-                            <label class="check option">
-                                <input type="checkbox" class="check__input hidden-object" name="capacity2">
-                                <span class="check__box"></span>
-                                <span class="check__text">1.5 - 2 л</span>
-                            </label>
+                    <div class="item">
+                        <div class="item-in">
+                            <p class="f-title">Об'єм резервуара для води</p>
+                            <div class="content">
+                                <label class="check option">
+                                    <input type="checkbox" class="check__input hidden-object" name="capacity1">
+                                    <span class="check__box"></span>
+                                    <span class="check__text">1 - 1.4 л</span>
+                                </label>
+                                <label class="check option">
+                                    <input type="checkbox" class="check__input hidden-object" name="capacity2">
+                                    <span class="check__box"></span>
+                                    <span class="check__text">1.5 - 2 л</span>
+                                </label>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="item-in">
-                        <div class="item__one__line">
-                        <p class="f-title">Показувати лише товари в наявності</p>
-                        <div class="switch">
-                            <label>
-                            <input type="checkbox" class="hidden-object" name="">
-                            <span class="slider round"></span>
-                            </label>
-                        </div>
+                    <div class="item">
+                        <div class="item-in">
+                            <div class="item__one__line">
+                                <p class="f-title">Показувати лише товари в наявності</p>
+                                <div class="switch">
+                                    <label>
+                                        <input type="checkbox" class="hidden-object" name="">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
                     <div class="item item__btns">
                         <div class="item-in">
                             <div class="item__one__line">
@@ -409,7 +424,7 @@
                             </div>
                             <div class="close__sorting mobile-flex">
                                 <p class="sorting__title">Сортування</p>
-                            <div class="icon-close"><span></span></div>
+                                <div class="icon-close"><span></span></div>
                             </div>
                             <a href="" class="active">За ціною</a>
                             <a href="">За популярністю</a>
@@ -1214,8 +1229,6 @@
                         </div>
 
 
-
-
                     </div>
                 </div>
                 <div class="show__more__catalog">
@@ -1312,7 +1325,7 @@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
 <script type='text/javascript' src='./js/slick-lightbox.js'></script>
-
+<script src="./js/datepicker.js"></script>
 
 <script type='text/javascript' src='./js/main.js'></script>
 </body>
