@@ -768,7 +768,6 @@ if (filtersContainer) {
 
 //product page start
 
-
 //360 view start
 $('.item-360').click(function (e) {
     show360Popup(e.target.parentNode)
@@ -923,9 +922,7 @@ if (document.querySelector('.product-page')) {
 }
 
 function prepareCurentProductSlider(parentClass) {
-    console.log(parentClass)
     let parent = document.querySelector(parentClass)
-    console.log(parent)
     let mainImgSliderId = parent.querySelector('.product__media-main__img').id;
     let navsSliderId = parent.querySelector('.product__media-thumbs').id;
     if (!parent.querySelector('.product__media-main__img').classList.contains('slick-slider')) {
@@ -1082,7 +1079,11 @@ $('.product__show__less').click(function (e) {
     $('.product__description__content__hidden__text').slideUp()
 
 })
-
+if(document.querySelector('.product-rating')){
+    document.querySelectorAll('.product-rating').forEach(el=>{
+        setStarInPercent(el, el.dataset.rate)
+    })
+}
 //product page end
 //login popup start
 

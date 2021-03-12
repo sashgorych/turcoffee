@@ -7126,6 +7126,8 @@ div[data-tippy-root] {
     }
     .product__part2 .product__price-counter_btns {
       visibility: hidden;
+      height: 1px;
+
     }
   }
   .make-order {
@@ -7886,7 +7888,7 @@ div[data-tippy-root] {
         -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
-        z-index: 1;
+        z-index: 0;
         display: inline-block;
         width: 22px;
         height: 22px;
@@ -9326,6 +9328,13 @@ div[data-tippy-root] {
     position: absolute;
     left: -10px;
     width: 10px;
+  }
+}
+.acc_events_container-event {
+  text-align: left;
+  margin-bottom: 70px;
+  .acc_events_item .acc_events_item_cont{
+    width: 100%;
   }
 }
 
