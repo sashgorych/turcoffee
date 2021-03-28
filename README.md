@@ -3,10 +3,59 @@
 [Реєстрація](#Реєстрація)
 [Корзина](#Корзина)
 [Кабінет](#Кабінет)
-# Задачі
-1) додати select2.js
-2) 360 плагін
-3) сторінка успішного оформлення заказу
+# Відновлення паролю
+```
+<section class="restore_pass_section">
+    <div class="container-block">
+        
+
+        <div class="restore_pass">
+            <div class="title-line-block">
+     <div class="title-line-block-text">
+          <h1 class="title-line-block-text-text">Відновлення паролю</h1>
+     </div>
+     <div class="title-line-block-line"></div>
+     
+</div>
+				
+            <div class="default_register_block">
+            
+				
+            <div class="contacts__form register_form">
+                <form action="/register/check_ua" id="register-form">
+                    <input type="hidden" name="obj[data][reffral-code]" value="">
+                    <div class="form__in">
+                        <div class="form_part">
+                            <div class="form-row regfrm-rows regfrm-surname-row">
+                                <span class="label">Введите email или номер телефона</span>
+                                <input class="all-cback-inp" value="" required="" placeholder="" name="obj[data][surname]" type="text">
+                                <span class="all-cback-inp-span cback-inp-error-text" id="cback-inp-err-surname-span">*обов`язкове поле</span>
+                            </div>
+							
+                            
+                            
+
+                        </div>
+                        
+                    </div>
+<div class="text_anotation">
+                <p>Вам відправлено .....</p>
+            </div>
+                    
+
+                    
+
+                    <button type="submit" class="custom-button__white left_btn" id="">Отримати код</button>
+                </form>
+            </div>
+        </div>
+            
+        </div>
+
+    </div>
+</section>
+```
+
 # Форма відгуку
 ось тут ``` <input class="js-rating-input" name="rating" type="hidden" value="5"> ``` знаходиться значення зірочок 
 Перевірку на пустий textarea зробив js-ом.
