@@ -4,6 +4,396 @@
 [Корзина](#Корзина)
 [Кабінет](#Кабінет)
 
+# Лист корзиа
+```
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mail</title></head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-family: arial;
+        background: #f3f3f3;
+    }
+    .wrapper {
+    }
+    .logo {
+        margin: 11px;
+        height: 139px;
+        background: #fff;
+    }
+    .user {
+        font-weight: bold;
+    }
+    .img-l {
+        margin: 0 auto;
+        margin-top: 18px;
+    }
+    .title {
+        margin-top: 30px;
+        margin-bottom: 16px;
+    }
+    .data {
+        margin-bottom: 25px;
+        text-align: left;
+        float: left;
+    }
+    .info {
+        float: left;
+        clear: both;
+        text-align: left;
+        font-size: 15px;
+        margin-top: 19px;
+        margin-bottom: 60px;
+    }
+    .user-d {
+        color: #505151;
+        line-height: 1.4;
+    }
+    .log {
+        color: #000;
+    }
+    .b-panel {
+        clear: both;
+        background: #272b34;
+    }
+    .coop {
+        clear: both;
+        height: 45px;
+        color: #919397;
+        font-size: 13px;
+        line-height: 45px;
+        text-align: center;
+        background: #22262f;
+    }
+    .center {
+        max-width: 550px;
+        margin: 0 auto;
+    }
+    .contact {
+        color: #fbfbfb;
+        font-size: 14px;
+        padding-top: 36px;
+        margin-bottom: 28px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .bl {
+        text-align: left;
+        line-height: 1.4;
+    }
+    .h-l {
+        color: #fff;
+        text-decoration: none;
+    }
+    .status {
+        color: #aa3838;
+        font-size: 16px;
+    }
+    .info-order {
+        color: #9a9a9a;
+        font-size: 15px;
+        margin-top: 23px;
+    }
+    .prise {
+        color: #ab3939;
+    }
+    .tg {
+        border-collapse: collapse;
+        border-spacing: 0;
+        border-color: #aabcfe;
+        width: 97%;
+        margin: 0 1.5%;
+    }
+    tr {
+        border-bottom: 1px solid #f4f4f4;
+    }
+    .tg td {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        padding: 10px 5px;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+        word-break: normal;
+        border-color: #aabcfe;
+        border: none;
+        color: #000;
+        background-color: #e8edff;
+    }
+
+    .tg th {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        padding: 10px 5px;
+        border-style: solid;
+        border-width: 1px;
+        overflow: hidden;
+        word-break: normal;
+        border-color: #aabcfe;
+        border: none;
+        color: #000;
+        background-color: #f3f3f3 !important;
+    }
+
+    .tg .tg-5986 {
+        background-color: #ffffff;
+        border-color: inherit;
+        text-align: center;
+        vertical-align: top
+    }
+    .tg .tg-3xi5 {
+        background-color: #ffffff;
+        border-color: inherit;
+        text-align: center;
+        vertical-align: top
+    }
+    .text-order {
+        width: 97%;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        height: 77px;
+        margin: 0 1.5%;
+        background: #fff;
+    }
+    .o-t {
+        padding-left: 19px;
+    }
+
+    /*table*/
+    .h_total {
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
+        padding: 5px 5px;
+        box-sizing: border-box;
+    }
+    .h_total p {
+        font-size: 23px;
+    }
+    .h_total p:first-child {
+        margin-right: 25px;
+    }
+
+    .h_product_table .h_p_row .colors .color-name {
+        position: relative;
+        border-radius: 50%;
+        font-size: 10px;
+        line-height: 16px;
+        width: 14px;
+        height: 14px;
+        margin: auto;
+        border-radius: 50%;
+        display: none;
+    }
+    .h_product_table .h_p_row .weights .weight-name {
+        display: none;
+    }
+    .h_product_table .h_p_row.pr__weight .weights .empty {
+        display: none;
+    }
+    .h_product_table .h_p_row.pr__weight .weights .weight-name {
+        display: block;
+    }
+    .h_product_table .h_p_row.pr__colors .colors .empty {
+        display: none;
+    }
+    .h_product_table .h_p_row.pr__colors .colors .color-name {
+        display: flex;
+    }
+
+    .h_product_table {
+        border: 1px solid #aeaeae;
+    }
+    .h_product_table .h_p_row {
+        border-bottom: 1px solid #aeaeae;
+        display: flex;
+        font-size: 16px;
+    }
+    p{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .h_product_table .h_p_row:nth-child(2n+1) {
+        background: #e7e7e7;
+    }
+    .h_product_table .h_p_row:nth-child(1) {
+        background: #d1d1d1;
+    }
+    .h_product_table .h_p_row:nth-child(1) .h_p_col:first-child {
+        justify-content: center !important;
+    }
+    .h_product_table .h_p_row:nth-child(1) p {
+    }
+
+    .h_product_table .h_p_row .h_p_col {
+        padding: 4px 5px;
+        border-left: 1px solid #aeaeae;
+        display: flex;
+        align-items: center;
+    }
+    .h_product_table .h_p_row .h_p_col:nth-child(1) {
+        border: none;
+        justify-content: flex-start;
+        width: 52%;
+    }
+    .h_product_table .h_p_row .h_p_col:nth-child(2) {
+        justify-content: center;
+        width: 11%;
+    }
+    .h_product_table .h_p_row .h_p_col:nth-child(3) {
+        justify-content: center;
+        width: 12%;
+    }
+    .h_product_table .h_p_row .h_p_col:nth-child(4) {
+        justify-content: center;
+        width: 11%;
+    }
+    .h_product_table .h_p_row .h_p_col:nth-child(5) {
+        justify-content: center;
+        width: 14%;
+    }
+    .draw_up_order .h_product_table .h_p_row .h_p_col:nth-child(1) {
+        width: 32%;
+    }
+    .draw_up_order .h_product_table .h_p_row .h_p_col:nth-child(6) {
+        justify-content: center;
+        width: 20%;
+    }
+    .draw_up_order_table {
+        max-width: 1120px;
+        margin: 0 auto 30px;
+    }
+    .draw_up_order_table .h_total {
+        border-top: 1px solid #aeaeae;
+    }
+
+    .draw_up_order_table .table_content {
+        overflow-x: auto;
+    }
+    .draw_up_order_table .h_p_row {
+        min-width: 650px;
+    }
+    .h_product_table .table_content .h_p_row:last-child{
+        border-bottom: none;
+    }
+</style>
+
+
+<body style="margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;text-align:center;font-family:arial;background-color:#f3f3f3;background-image:none;background-repeat:repeat;background-position:top left;background-attachment:scroll;">
+<div class="wrapper">
+    <div class="logo"
+         style="margin-top:11px;margin-bottom:11px;margin-right:11px;margin-left:11px;height:139px;background-color:#fff;background-image:none;background-repeat:repeat;background-position:top left;background-attachment:scroll;">
+        <img class="img-l" src="http://<%$OUT?['GLOBALS']['server-addr']&amp;1%>/images/mail.logo.jpg" alt="Turcoffee"
+             style="width: 400px;margin-top:18px;margin-bottom:0;margin-right:auto;margin-left:auto;"></div>
+    <div class="center" style="overflow: hidden; max-width:550px;margin-top:0;margin-bottom:0;margin-right:auto;margin-left:auto;" >
+        <div class="title" style="margin-top:30px;margin-bottom:16px;" >
+            <div class="hi">Приветсвуем <span class="user" style="font-weight:bold;" > <%$OUT?['GLOBALS']['username']%>,  </span></div>
+            <div class="status" style="color:#aa3838;font-size:16px;" >Ваш заказ прийнят в обработку</div>
+            <div class="info-order" style="color:#9a9a9a;font-size:15px;margin-top:23px;" >Информация о заказе</div>
+        </div>
+        <div class="data" style="margin-bottom:25px;text-align:left;" >
+            <div class="user-d" style="color:#505151;line-height:1.4;" >№ заказа: <span class="log" style="color:#000;" > <%$OUT?['GLOBALS']['zakaz-index']%></span></div>
+            <div class="user-d" style="color:#505151;line-height:1.4;" >Дата заказа: <span class="log" style="color:#000;" > <%$OUT?['GLOBALS']['zakaz-date']%></span></div>
+            <div class="user-d" style="color:#505151;line-height:1.4;" >Сума заказа: <span class="log " style="color:#000;" > <span class="prise" style="color:#ab3939;" ><%$OUT?['GLOBALS']['zakaz-sum']%>  грн.</span></span></div>
+            <div class="user-d" style="color:#505151;line-height:1.4;" >Спосoб доставки: <span class="log" style="color:#000;" > <%$OUT?['GLOBALS']['delivery-service']%></span></div>
+            <div class="user-d" style="color:#505151;line-height:1.4;" >Город НП: <span class="log" style="color:#000;" > <%$OUT?['GLOBALS']['np-city-name']%> </span></div>
+
+            <div class="user-d" style="color:#505151;line-height:1.4;" >Отделение НП: <span class="log" style="color:#000;" > <%$OUT?['GLOBALS']['np-wh-name']%> </span></div>
+
+            <div class="user-d" style="color:#505151;line-height:1.4;" >Адрес: <span class="log" style="color:#000;" > <%$OUT?['GLOBALS']['delivery-adress']%></span></div>
+        </div>
+    </div>
+    <div class="draw_up_order_table">
+        <div class="h_product_table">
+            <div class="table_content">
+                <div class="h_p_row">
+                    <div class="h_p_col"><p>Назва товару</p></div>
+                    <div class="h_p_col"><p>Вага</p></div>
+                    <div class="h_p_col"><p>Колір</p></div>
+                    <div class="h_p_col"><p>Кількість</p></div>
+                    <div class="h_p_col"><p>Ціна</p></div>
+                </div>
+                <div class="h_p_row pr__colors">
+                    <div class="h_p_col"><p>Кава мелена Elite </p></div>
+                    <div class="h_p_col">
+                        <div class="weights">
+                            <span class="empty">—</span>
+                            <p class="weight-name">1 кг</p>
+                        </div>
+                    </div>
+                    <div class="h_p_col">
+                        <div class="colors">
+                            <span class="empty">—</span>
+                            <span class="color-name" title="Червоний" style="background: red"></span>
+                        </div>
+                    </div>
+                    <div class="h_p_col"><p>1</p></div>
+                    <div class="h_p_col"><p>250 грн</p></div>
+                </div>
+                <div class="h_p_row pr__weight">
+                    <div class="h_p_col"><p>Кава мелена Elite </p></div>
+                    <div class="h_p_col">
+                        <div class="weights">
+                            <span class="empty">—</span>
+                            <p class="weight-name">1 кг</p>
+                        </div>
+                    </div>
+                    <div class="h_p_col">
+                        <div class="colors">
+                            <span class="empty">—</span>
+                            <span class="color-name" title="Червоний" style="background: red"></span>
+                        </div>
+                    </div>
+                    <div class="h_p_col"><p>1</p></div>
+                    <div class="h_p_col"><p>250 грн</p></div>
+                </div>
+                <div class="h_p_row">
+                    <div class="h_p_col"><p>Кава мелена Elite </p></div>
+                    <div class="h_p_col">
+                        <div class="weights">
+                            <span class="empty">—</span>
+                            <p class="weight-name">1 кг</p>
+                        </div>
+                    </div>
+                    <div class="h_p_col">
+                        <div class="colors">
+                            <span class="empty">—</span>
+                            <span class="color-name" title="Червоний" style="background: red"></span>
+                        </div>
+                    </div>
+                    <div class="h_p_col"><p>1</p></div>
+                    <div class="h_p_col"><p>250 грн</p></div>
+                </div>
+            </div>
+            <div class="h_total">
+                <p>Загальна сума:</p>
+                <p>4567 грн.</p>
+            </div>
+        </div>
+    </div>
+    <div class="b-panel"
+         style="clear:both;background-image:none;background-repeat:repeat;background-position:top left;background-attachment:scroll;">
+        <div class="coop"
+             style="clear:both;height:45px;color:#000000;font-size:13px;line-height:45px;text-align:center;background-color:#e7e7e7;background-image:none;background-repeat:repeat;background-position:top left;background-attachment:scroll;">
+            Copyright :copyright: &lt;%$OUT?['GLOBALS']['current-year']&amp;1%&gt; Turcoffee.ua
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+```
+
 # Попап *нема потрібної кількості*
 ```
 showCountErrorPopup()
