@@ -4,6 +4,15 @@
 [Корзина](#Корзина)
 [Кабінет](#Кабінет)
 
+# Слайдер продуктів
+в div.item зараз є div.item-wr . в div.item вставити всі потрібні товари щоб вийшла структура
+```
+<div class="item">
+	<div class="item-wr all-item-inlink-4e54075e-4524-11eb-95f7-7824af9fe030 switch-item-279"></div>
+	<div class="item-wr all-item-inlink-4e54075e-4524-11eb-95f7-7824af9fe030 switch-item-280" style="display:none;"></div>
+	<div class="item-wr all-item-inlink-4e54075e-4524-11eb-95f7-7824af9fe030 switch-item-281" style="display:none;"></div>
+</div>
+```
 # Лист корзиа
 ```
 <!DOCTYPE html>
