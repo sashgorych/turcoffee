@@ -4,6 +4,22 @@
 [Корзина](#Корзина)
 [Кабінет](#Кабінет)
 
+# Інфо про оптову ціну
+код: 
+```
+<div class="more_info_block">
+  <div class="info_icon">
+    <span>i</span>
+  </div>
+  <div class="opt_info_block_content">
+    <p>При замовленні від <span>10</span>шт. ціна: 90.5 грн.</p>
+  </div>
+</div>
+ ```
+- каталог. вставити код в ```div.product-counter-prices ``` перед ```div.counter```
+- Сторінка товару. вставити код в ```div.product__price-counter_btns ``` перед ```div.counter```
+
+
 # Слайдер продуктів
 в div.item зараз є div.item-wr . в div.item вставити всі потрібні товари щоб вийшла структура
 ```
