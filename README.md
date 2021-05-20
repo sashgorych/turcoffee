@@ -18,6 +18,7 @@
  ```
 - каталог. вставити код в ```div.product-counter-prices ``` перед ```div.counter```
 - Сторінка товару. вставити код в ```div.product__price-counter_btns ``` перед ```div.counter```
+- Корзина. вставити код в ```div.cart_itm_price_block ``` перед ```div.counter```
 
 
 # Слайдер продуктів
