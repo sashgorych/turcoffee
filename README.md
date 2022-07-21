@@ -8,7 +8,8 @@
  - li.lvl1 має клас has_drop_li
  - після цього li в <a> є клас has_drop
  - присутній div.submenu  
-  в div.list-title Заголовок категорії,   ul.list-items - підкатегорії,  
+  в div.list-title Заголовок категорії,    
+  ul.list-items - підкатегорії,    
   div.submenu-image - картинка-банер для підкатегорії
 ```
 <li class="lvl1 has_drop_li">
