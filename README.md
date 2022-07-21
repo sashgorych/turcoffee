@@ -3,6 +3,43 @@
 [Реєстрація](#Реєстрація)
 [Корзина](#Корзина)
 [Кабінет](#Кабінет)
+# new Каталог в шапці  
+ ## пункт з підкатегорією  
+ - li.lvl1 має клас has_drop_li
+ - після цього li в <a> є клас has_drop
+ - присутній div.submenu  
+ -- в div.list-title Заголовок категорії, ul.list-items - підкатегорії
+ -- div.submenu-image - картинка-банер для підкатегорії
+```
+<li class="lvl1 has_drop_li">
+    <a href="" class="has_drop">
+        <span class="img-cat">
+            <img src="./images/iconTurcoffe/coffee-beans.png" alt=""></span>
+        Кава
+    </a>
+    <div class="submenu">
+        <div class="submenu-container">
+            <div class="submenu-content">
+                <div class="card-wrap" style="">
+                    <div class="content-right">
+                        <div class="list-title">
+                            <a href="">Кава</a>
+                        </div>
+                        <ul class="list-items">
+                            <li><a href="">Зернова</a></li>
+                            <li><a href="">Мелена</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="submenu-image">
+                <img src="/images/test-img.png" alt="">
+            </div>
+        </div>
+    </div>
+</li>
+```
+
 # Попап додавання в корзину
 showCartPopup()
 ```
