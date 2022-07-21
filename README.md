@@ -4,6 +4,17 @@
 [Корзина](#Корзина)
 [Кабінет](#Кабінет)
 # new Каталог в шапці  
+## пункт без підкатегорії
+```
+<li class="lvl1">
+    <a href="" class="">
+       <span class="img-cat">
+         <img src="./images/iconTurcoffe/coffee-machine.png" alt="">
+       </span>
+        Кавоварки
+    </a>
+</li>
+```
  ## пункт з підкатегорією  
  - li.lvl1 має клас has_drop_li
  - після цього li в <a> є клас has_drop
