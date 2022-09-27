@@ -34,11 +34,11 @@
 <div class="catalog_for_pdf_container" style="display: none;">
 </div>
 ```
-При кліку на ```<a class="item-online-catalog"> ``` 
-1)аяксом підвантажуємо потрібний html у прихований блок, Після того як загрузився html
-2)el = document.querySelector('section.catalog_pdf'); 
-3)викликаєм generatePDF(el) і передаєм el
-
+При кліку на ```<a class="item-online-catalog"> ```   
+1)аяксом підвантажуємо потрібний html у прихований блок, Після того як загрузився html   
+2)el = document.querySelector('section.catalog_pdf');    
+3)викликаєм generatePDF(el) і передаєм el   
+   
 
 
 У ``` div.catalog_for_pdf_container ``` прихований блок, у який аяксом завантажуються товари потрібної категорії. див section.catalog_pdf  
