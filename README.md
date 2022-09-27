@@ -41,10 +41,11 @@
    
 
 
-У ``` div.catalog_for_pdf_container ``` прихований блок, у який аяксом завантажуються товари потрібної категорії. див section.catalog_pdf  
-Структура блоку який підгружається у pdf
-```div.pdf_title ``` Назва категорії яку підвантажуємо
-```div.catalog_pdf_list ``` тут товари - ```catalog_pdf_item ```  
+``` div.catalog_for_pdf_container ``` прихований блок, сюди аяксом завантажуєм html для вибраної категорії. див.```<section class="catalog_pdf"> ```   
+Структура блоку який підгружається:   
+``` div.titul``` титулка, перша сторінка в pdf. завжди одинакова   
+```div.pdf_title ``` Заголовок   
+```div.catalog_pdf_list ``` список товарів - ```catalog_pdf_item ```     
 
 
 ```
