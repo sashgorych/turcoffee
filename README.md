@@ -34,7 +34,67 @@
 <div class="catalog_for_pdf_container" style="display: none;">
 </div>
 ```
-У ``` div.catalog_for_pdf_container ``` аяксом завантажуються товари потрібної категорії. див section.catalog_pdf
+При кліку на ```<a class="item-online-catalog"> ``` 
+1)аяксом підвантажуємо потрібний html у прихований блок, Після того як загрузився html
+2)el = document.querySelector('section.catalog_pdf'); 
+3)викликаєм generatePDF(el) і передаєм el
+
+
+
+У ``` div.catalog_for_pdf_container ``` прихований блок, у який аяксом завантажуються товари потрібної категорії. див section.catalog_pdf  
+Структура блоку який підгружається у pdf
+```div.pdf_title ``` Назва категорії яку підвантажуємо
+```div.catalog_pdf_list ``` тут товари - ```catalog_pdf_item ```  
+
+
+```
+   <section class="catalog_pdf" id="cat1">
+        <div class="titul">
+            <img src="/images/titul.jpg" alt="turcoffee catalog">
+        </div>
+        <div class="content-pdf">
+            <img src="/images/logo.svg" alt="turcoffee" class="pdf-logo">
+            <div class="cat-pad">
+                <div class="pdf_title">
+        <span class="art">Кава
+            <img src="/images/triangle-right.svg" alt="">
+        </span>
+                    <span>Мелена</span>
+                </div>
+                <div class="no-break"></div>
+                <div class="catalog_pdf_list">
+                    <div class="catalog_pdf_item">
+                        <div class="img">
+                            <img src="./images/temp/product-img.jpg" alt="">
+                        </div>
+                        <div class="item-title">
+                            <p> Кава мелена Elite
+                            </p>
+                        </div>
+                        <div class="bottom-block">
+                            <div class="bottom-block-left">
+                                <div class="bottom-block-left-line">
+                                    <span>Роздрібна</span>
+                                    <p>182 <span>грн</span></p>
+                                </div>
+                                <div class="bottom-block-left-line">
+                                    <span>Від 500 грн</span>
+                                    <p>165 <span>грн</span></p>
+                                </div>
+                            </div>
+                            <div class="bottom-block-right">
+                                <div class="buy-img">
+                                    <img src="/images/icons/basket_white_buy.svg" alt="add to cart">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+```
 
 
 
