@@ -35,8 +35,8 @@
 </div>
 ```
 При кліку на ```<a class="item-online-catalog"> ```   
-1)аяксом підвантажуємо потрібний html у прихований блок, Після того як загрузився html   
-2)el = document.querySelector('section.catalog_pdf');    
+1)аяксом підвантажуємо потрібний html у прихований блок,  
+2)Після того як загрузився html, el = document.querySelector('section.catalog_pdf');    
 3)викликаєм generatePDF(el) і передаєм el   
    
 
