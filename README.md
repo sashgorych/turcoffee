@@ -2,9 +2,39 @@
 1) Сторінка для користувача. вигляд:
  ![Alt-текст](https://github.com/sashgorych/turcoffee/blob/master/image.png "Орк")
 
-
+код:
 ```
+<section class="catalog online-catalog catalog-lvl1">
+    <div class="container-block">
+<div class="title-line-block">
+     <div class="title-line-block-text">
+          <h1 class="title-line-block-text-text">Електронний каталог</h1>
+     </div>
+     <div class="title-line-block-line"></div>
+     
+</div>
+        <div class="catalog-content active">
+            <div class="catalog-items">
+                <div class="product-list">
+                    <div class="products-container">
+                        <a href="#cat1" class="item-online-catalog">
+                            <p class="item-online-catalog-title">Кава</p>
+                            <img src="/images/icon_pdf.svg" alt="">
+                        </a>
+                        <a href="#cat2" class="item-online-catalog">
+                            <p class="item-online-catalog-title">Кава</p>
+                            <img src="/images/icon_pdf.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="catalog_for_pdf_container" style="display: none;">
+</div>
 ```
+У ``` div.catalog_for_pdf_container ``` аяксом завантажуються товари потрібної категорії. див section.catalog_pdf
 
 
 
