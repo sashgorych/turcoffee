@@ -1,6 +1,6 @@
 # pdf
 1) Сторінка для користувача. вигляд:
- ![Alt-текст](https://github.com/sashgorych/turcoffee/blob/master/image.png "Орк")
+ ![Alt-текст](https://github.com/sashgorych/turcoffee/blob/master/image.png "Орк")   
 
 код:
 ```
@@ -47,7 +47,7 @@
 ```div.pdf_title ``` Заголовок   
 ```div.catalog_pdf_list ``` список товарів - ```catalog_pdf_item ```     
 
-
+Код:
 ```
    <section class="catalog_pdf" id="cat1">
         <div class="titul">
@@ -96,7 +96,8 @@
         </div>
     </section>
 ```
-
+Ось так він виглядає 
+ ![Alt-текст](https://github.com/sashgorych/turcoffee/blob/master/msg558545446-175797.jpg "Орк")
 
 
 
