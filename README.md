@@ -1,6 +1,6 @@
 # pdf
 1) Сторінка для користувача. вигляд:
- ![Alt-текст](https://github.com/sashgorych/akrona/blob/master/image.png "Орк")
+ ![Alt-текст](https://github.com/sashgorych/turcoffee/blob/master/image.png "Орк")
 
 
 ```
