@@ -1,3 +1,57 @@
+# location
+вставити біля div.language (у двох місцях, є в хедері і є в мобільному меню), огорнути в div.location-lang. приклад як має виглядати структура:
+В *Ваше місто* виводити назву міста або фразу 'Ваше місто' у разі якщо не вибрано місто 
+```
+ <div class="location-lang">
+                    <div class="language">......</div>
+                    <div class="location-chose">
+                        <div class="current-location">
+                            <img src="/images/icons/loc.svg" alt="Україна">
+                            <div class="selected-location">
+                                <span>Ваше місто</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+```
+popup вставити після section.footer 
+```
+<div class="location-popup hidden-object">
+    <div class="location-close">
+        <div class="icon-close"><span></span></div>
+    </div>
+    <div class="location-popup-in">
+        <img src="/images/logo.svg" class="lozad" data-src="/images/logo.svg" alt="turcoffee" data-loaded="true">
+        <p class="loc-pop-tittle">Оберіть своє місто</p>
+        <ul>
+            <li><a href="">Чернівці</a></li>
+            <li><a href="">Київ</a></li>
+            <li><a href="">Ужгород</a></li>
+        </ul>
+    </div>
+</div>
+```
+popup js
+```
+ $('.location-close').click(function (e){
+        e.preventDefault()
+        closeLocationPopup()
+    })
+    $('.location-chose').click(function (e){
+        e.preventDefault()
+        openLocationPopup()
+    })
+    function openLocationPopup(){
+        $('.location-popup').addClass('show-location')
+        $('.location-popup').removeClass('hidden-object')
+        lockBg()
+    }
+    function closeLocationPopup(){
+        $('.location-popup').removeClass('show-location')
+        $('.location-popup').addClass('hidden-object')
+            unlockBg()
+    }
+```
 # pdf
 1) Сторінка для користувача. вигляд:
  ![Alt-текст](https://github.com/sashgorych/turcoffee/blob/master/image.png "Орк")   
