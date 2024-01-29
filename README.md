@@ -52,6 +52,154 @@ popup js
             unlockBg()
     }
 ```
+location css
+```
+
+.location-lang {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.location-chose {
+  cursor: pointer;
+  margin-left: 10px; }
+  .location-chose:hover span {
+    text-decoration: underline; }
+  .location-chose .current-location {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .location-chose .current-location .selected-location {
+      margin-top: 3px; }
+    .location-chose .current-location .selected-location span {
+      color: black;
+      font-size: 14px; }
+    .location-chose .current-location img {
+      margin-right: 10px;
+      width: 19px;
+      height: 19px;
+      margin-top: 3px; }
+
+.location-popup {
+  position: fixed;
+  z-index: 25;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  overflow-y: auto;
+  opacity: 0; }
+  .location-popup.show-location {
+    display: block;
+    opacity: 1;
+    -webkit-transition: opacity .5s;
+    -o-transition: opacity .5s;
+    transition: opacity .5s; }
+  .location-popup .location-close {
+    z-index: 26;
+    position: absolute;
+    top: 35px;
+    right: 35px; }
+  .location-popup .location-popup-in {
+    max-height: 100%;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    max-width: 1180px;
+    margin: auto;
+    padding: 40px 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+    .location-popup .location-popup-in > p {
+      font-size: 21px;
+      color: black;
+      margin-bottom: 40px; }
+    .location-popup .location-popup-in > img {
+      margin-bottom: 40px;
+      max-width: 375px;
+      width: 100%;
+      display: block; }
+  .location-popup ul {
+    padding-bottom: 40px;
+    gap: 40px;
+    -webkit-column-count: 3;
+       -moz-column-count: 3;
+            column-count: 3; }
+    .location-popup ul li {
+      margin-bottom: 8px; }
+    .location-popup ul a {
+      color: black;
+      font-size: 17px; }
+      .location-popup ul a:hover {
+        text-decoration: underline; }
+      .location-popup ul a:before {
+        content: "";
+        margin-right: 10px;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        background: url("../images/icons/loc.svg");
+        background-size: 18px auto; }
+
+@media screen and (max-width: 900px) {
+  .location-chose {
+    margin-left: 0;
+    margin-top: 5px; }
+  .location-lang {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start; } }
+
+@media screen and (max-width: 576px) {
+  .location-popup .location-close {
+    top: 15px;
+    right: 15px; }
+  .location-popup .location-popup-in > img {
+    width: 60vw; }
+  .location-popup ul {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2; }
+  .location-popup ul a {
+    font-size: 15px; }
+  .location-popup .location-popup-in > p {
+    font-size: 17px; } }
+```
+
 # pdf
 1) Сторінка для користувача. вигляд:
  ![Alt-текст](https://github.com/sashgorych/turcoffee/blob/master/image.png "Орк")   
